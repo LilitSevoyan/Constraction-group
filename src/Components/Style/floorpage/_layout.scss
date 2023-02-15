@@ -1,0 +1,70 @@
+.tooltip-wrapper{
+    display: flex;
+    box-shadow: 0 0 3px 2px #f8f8f8;
+    border-radius: 4px;
+    .tooltip-left-part {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        font-family: Medium;
+        padding: 10px;
+        border-radius: 4px 0 0 4px;
+        height: 66px;
+        justify-content: center;
+        color: #fff;
+        //background-color: #868686;
+        .building-number{
+            font-size: 15px;
+            font-family: Bold;
+        }
+    }
+    .tooltip-right-part{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 10px 20px;
+        border-radius: 0 4px 4px 0;
+        height: 66px;
+        justify-content: center;
+        .floors-count {
+            font-size: 14px;
+            color: #868686;
+            font-family: Regular;
+        }
+        .houses-count {
+            font-size: 16px;
+            color: #202020;
+            font-family: Medium;
+            
+        }
+
+    }
+}
+.color-green{
+    stroke: rgb(126, 211, 33);
+    fill: rgb(126, 211, 33);
+    background:rgb(126, 211, 33) ;
+}
+.color-yellow{
+    stroke: rgb(245, 166, 35);
+    fill: rgb(245, 166, 35);
+    background:rgb(245, 166, 35);
+}
+.color-red{
+    stroke: rgb(241, 0, 4);
+    fill: rgb(241, 0, 4);
+    background:rgb(241, 0, 4) ;
+}
+
+@media(max-width:1200px){
+    .RightSide{
+        width: 100% !important;
+    }
+}
+
+@media(max-width:1200px){
+    .FloorMainContent{
+        flex-direction: column;
+    }
+}

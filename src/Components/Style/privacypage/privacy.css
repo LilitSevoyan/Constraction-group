@@ -1,0 +1,23 @@
+.PrivacyWrapper {
+  padding: 65px 7.5%;
+}
+
+.PrivacyWrapper .privacy-policy {
+  text-align: center;
+}
+
+.PrivacyWrapper .privacy-policy .privacy-policy-title {
+  font-family: inherit;
+  overflow: visible;
+  font-size: 20px;
+  color: inherit;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.PrivacyWrapper .privacy-policy .privacy-policy-text {
+  color: #333333;
+  font-size: 14px;
+  line-height: 25px;
+}
+/*# sourceMappingURL=privacy.css.map */

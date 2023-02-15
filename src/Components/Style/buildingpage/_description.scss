@@ -1,0 +1,85 @@
+.DescriptionContent {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin: 7.5% 0;
+    
+    .LeftSide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: calc(50% - 20px);
+        padding: 3.75% 0 3.75% 7.5%;
+        height: 100%;
+        .LeftSideTitle {
+            font-size: 40px;
+            line-height: 66px;
+            font-family: Bold;
+            margin-bottom: 20px;
+            color:#5282c1;
+            font-weight: 600;
+            text-transform: uppercase;
+            
+        }
+        .buildings-text {
+            width: calc(100% - 120px);
+        }
+        
+    }
+    .RightSide{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-image: linear-gradient(#fffcee 70%,#fff 0);
+        border-radius: 6px 0 0 6px;
+        width: calc(57.5% - 20px);
+        padding: 3.75% 7.5%;
+        .RightSideTitle {
+            font-size: 28px;
+            font-family: Medium;
+            margin-bottom: 24px;
+            
+        }
+        .buildings-text {
+            min-height: 200px;
+        }
+    }
+    .buildings-text {
+        font-size: 17px;
+        font-family: Regular;
+    }
+    .buildings-images {
+        width: 100%;
+        border-radius: 6px;
+        margin-top: 7.5%;
+        height: 100%;
+    }
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+    p{
+        line-height: 1.6;
+    }
+}
+
+@media(max-width:1200px){
+
+    .DescriptionContent {
+        flex-direction: column!important;
+        margin-top: 10px!important;
+        .LeftSide {
+            position: unset;
+            width:100%;
+            padding: 3.75% 7.5%;
+        }
+        .RightSide {
+            width: 100%;
+            margin-top: 16px;
+        }
+    }
+}

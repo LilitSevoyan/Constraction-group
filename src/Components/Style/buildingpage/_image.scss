@@ -1,0 +1,97 @@
+.ImageContent{
+    width: 100%;
+    height: 85%;
+    .ImageWrapper{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        border-radius: 6px 0 0 6px;
+        padding-top: 66.7%;
+        margin-bottom: -10%;
+        svg{
+            z-index: 101;
+            transition: .3s;
+            path{
+                cursor: pointer;
+                animation: none;
+                opacity: 1;
+                fill:transparent;
+                stroke: transparent;
+            }
+
+            path:hover{
+                animation: none!important;
+                opacity: 1!important;
+                stroke-opacity:1!important;
+                fill: #c58ff8;
+                stroke: #5282c1;
+
+            }
+        }
+
+        img, svg{
+            position: absolute;
+            width: 100%;
+            height: 85%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+
+        }
+        .tooltip-wrapper{
+            display: flex;
+            .tooltip-left-part {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 16px;
+                white-space: break-spaces;
+                font-family: Medium;
+                background: #5282c1;
+                padding: 10px 20px;
+                border-radius: 4px 0 0 4px;
+                height: 66px;
+                width: 66px;
+                justify-content: center;
+                .building-number {
+                    font-size: 16px;
+                    font-family: Bold;
+                }
+                .building-text {
+                    font-size: 16px;
+                    font-family: Medium;
+                }
+            }
+            .only-floor {
+                border-radius: 4px;
+            }
+            .tooltip-right-part {
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+                padding: 10px 40px 10px 20px;
+                border-radius: 0 4px 4px 0;
+                height: 66px;
+                white-space: nowrap;
+                justify-content: center;
+                .houses-count {
+                    font-size: 16px;
+                    color: #14ce47;
+                    font-family: Medium;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+    
+      
+    
+   
+

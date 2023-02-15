@@ -1,0 +1,100 @@
+.TopContent{
+    width:100%;
+    a, a:hover{
+        text-decoration: none;
+        color: inherit;
+    }
+    .AddressWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .address-left-wrapper{
+            margin-top: 20px;
+            padding: 0 0 0 7.5%;
+            .address-title {
+                font-size: 20px;
+                font-weight: 600;
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+            .ant-breadcrumb {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-variant: tabular-nums;
+                line-height: 1.5715;
+                list-style: none;
+                font-feature-settings: "tnum","tnum";
+                color: rgba(0,0,0,.45);
+                font-size: 14px;
+                .ant-breadcrumb-link{
+                    a{
+                        color: rgba(0,0,0,.45);
+                        transition: color .3s;
+                        text-decoration: none;
+                    }
+                    
+                }
+                .color{
+                     color: rgba(0,0,0,.85);
+                }
+                .ant-breadcrumb-separator{
+                    margin: 0 8px;
+                    color: rgba(0,0,0,.45);
+
+                }
+            }
+        }
+        .address-right-wrapper{
+            display: flex;
+            align-items: center;
+            padding:  0 10%;
+            margin-top: 20px;
+            .parking-wrapper{
+                svg{
+                    width:50px;
+                    height: 50px;
+                    margin-right: 20px; 
+                }
+            }
+            .item-card{
+                display: flex;
+                align-items: center;
+                .icon-wrapper{
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 6px;
+                    background-color: #f5f6f7;
+                    margin-right: 20px;
+                    transition: .2s;
+                    svg{
+                        width:25px;
+                        height: 25px;
+                    }
+                }
+                .item-card-content{
+                
+                    .item-card-content-title{
+                        color: #bfbcc2;
+                        font-family: Medium;
+                        margin-bottom: 2px;
+                        font-size: 14px;
+                    }
+                    .item-card-content-text{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        font-family: Medium;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+    }
+    
+}

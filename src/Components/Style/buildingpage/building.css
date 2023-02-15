@@ -1,0 +1,398 @@
+.TopContent {
+  width: 100%;
+}
+
+.TopContent a, .TopContent a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.TopContent .AddressWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper {
+  margin-top: 20px;
+  padding: 0 0 0 7.5%;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .address-title {
+  font-size: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum","tnum";
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb .ant-breadcrumb-link a {
+  color: rgba(0, 0, 0, 0.45);
+  transition: color .3s;
+  text-decoration: none;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb .color {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb .ant-breadcrumb-separator {
+  margin: 0 8px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.TopContent .AddressWrapper .address-right-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  margin-top: 20px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .parking-wrapper svg {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card {
+  display: flex;
+  align-items: center;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .icon-wrapper {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #f5f6f7;
+  margin-right: 20px;
+  transition: .2s;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .icon-wrapper svg {
+  width: 25px;
+  height: 25px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .item-card-content .item-card-content-title {
+  color: #bfbcc2;
+  font-family: Medium;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .item-card-content .item-card-content-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Medium;
+  font-size: 16px;
+}
+
+.ImageContent {
+  width: 100%;
+  height: 85%;
+}
+
+.ImageContent .ImageWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  border-radius: 6px 0 0 6px;
+  padding-top: 66.7%;
+  margin-bottom: -10%;
+}
+
+.ImageContent .ImageWrapper svg {
+  z-index: 101;
+  transition: .3s;
+}
+
+.ImageContent .ImageWrapper svg path {
+  cursor: pointer;
+  animation: none;
+  opacity: 1;
+  fill: transparent;
+  stroke: transparent;
+}
+
+.ImageContent .ImageWrapper svg path:hover {
+  animation: none !important;
+  opacity: 1 !important;
+  stroke-opacity: 1 !important;
+  fill: #c58ff8;
+  stroke: #5282c1;
+}
+
+.ImageContent .ImageWrapper img, .ImageContent .ImageWrapper svg {
+  position: absolute;
+  width: 100%;
+  height: 85%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper {
+  display: flex;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper .tooltip-left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  white-space: break-spaces;
+  font-family: Medium;
+  background: #5282c1;
+  padding: 10px 20px;
+  border-radius: 4px 0 0 4px;
+  height: 66px;
+  width: 66px;
+  justify-content: center;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper .tooltip-left-part .building-number {
+  font-size: 16px;
+  font-family: Bold;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper .tooltip-left-part .building-text {
+  font-size: 16px;
+  font-family: Medium;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper .only-floor {
+  border-radius: 4px;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper .tooltip-right-part {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 10px 40px 10px 20px;
+  border-radius: 0 4px 4px 0;
+  height: 66px;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.ImageContent .ImageWrapper .tooltip-wrapper .tooltip-right-part .houses-count {
+  font-size: 16px;
+  color: #14ce47;
+  font-family: Medium;
+}
+
+.TopContent {
+  width: 100%;
+}
+
+.TopContent a, .TopContent a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.TopContent .AddressWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper {
+  margin-top: 20px;
+  padding: 0 0 0 7.5%;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .address-title {
+  font-size: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum","tnum";
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb .ant-breadcrumb-link a {
+  color: rgba(0, 0, 0, 0.45);
+  transition: color .3s;
+  text-decoration: none;
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb .color {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.TopContent .AddressWrapper .address-left-wrapper .ant-breadcrumb .ant-breadcrumb-separator {
+  margin: 0 8px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.TopContent .AddressWrapper .address-right-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  margin-top: 20px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .parking-wrapper svg {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card {
+  display: flex;
+  align-items: center;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .icon-wrapper {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #f5f6f7;
+  margin-right: 20px;
+  transition: .2s;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .icon-wrapper svg {
+  width: 25px;
+  height: 25px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .item-card-content .item-card-content-title {
+  color: #bfbcc2;
+  font-family: Medium;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.TopContent .AddressWrapper .address-right-wrapper .item-card .item-card-content .item-card-content-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Medium;
+  font-size: 16px;
+}
+
+.DescriptionContent {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin: 7.5% 0;
+}
+
+.DescriptionContent .LeftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: calc(50% - 20px);
+  padding: 3.75% 0 3.75% 7.5%;
+  height: 100%;
+}
+
+.DescriptionContent .LeftSide .LeftSideTitle {
+  font-size: 40px;
+  line-height: 66px;
+  font-family: Bold;
+  margin-bottom: 20px;
+  color: #5282c1;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.DescriptionContent .LeftSide .buildings-text {
+  width: calc(100% - 120px);
+}
+
+.DescriptionContent .RightSide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(#fffcee 70%, #fff 0);
+  border-radius: 6px 0 0 6px;
+  width: calc(57.5% - 20px);
+  padding: 3.75% 7.5%;
+}
+
+.DescriptionContent .RightSide .RightSideTitle {
+  font-size: 28px;
+  font-family: Medium;
+  margin-bottom: 24px;
+}
+
+.DescriptionContent .RightSide .buildings-text {
+  min-height: 200px;
+}
+
+.DescriptionContent .buildings-text {
+  font-size: 17px;
+  font-family: Regular;
+}
+
+.DescriptionContent .buildings-images {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 7.5%;
+  height: 100%;
+}
+
+.DescriptionContent img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.DescriptionContent p {
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .DescriptionContent {
+    flex-direction: column !important;
+    margin-top: 10px !important;
+  }
+  .DescriptionContent .LeftSide {
+    position: unset;
+    width: 100%;
+    padding: 3.75% 7.5%;
+  }
+  .DescriptionContent .RightSide {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+/*# sourceMappingURL=building.css.map */
