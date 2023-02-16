@@ -1,8 +1,8 @@
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import React, { Component } from "react";
-import Slider from "react-slick";
-import { building1,building2,building3,building4,building5,building6,building7,building8,building9 } from "../assets";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import React, { Component } from "react"
+import Slider from "react-slick"
+import { building1,building2,building3,building4,building5,building6,building7,building8,building9 } from "../../assets"
 
 
 export default class AsNavFor extends Component {
@@ -90,7 +90,6 @@ export default class AsNavFor extends Component {
           <div>
             <img src={building9} alt="about" />
           </div>
-          
         </Slider>
         
       </div>

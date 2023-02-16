@@ -1,26 +1,25 @@
-import React,{useEffect} from "react"
-import {RiParkingBoxLine} from 'react-icons/ri'
-import {FloorLayout,FloorLayout1,FloorLayout2} from "../../assets"
-import {useNavigate} from "react-router-dom"
+import React,{ useEffect } from "react"
+import { RiParkingBoxLine } from 'react-icons/ri'
+import { FloorLayout, FloorLayout1, FloorLayout2 } from "../../../assets/index"
+import { useNavigate } from "react-router-dom"
 import Layout from "./Layout"
 import Layout1 from "./Layout1"
-import { getHouseFloorAction} from '../../../redux/actions/mainAction'
-import { useDispatch,useSelector} from 'react-redux'
+import { getHouseFloorAction } from '../../../redux/actions/mainAction'
+import { useDispatch, useSelector } from 'react-redux'
 import ParkingLayout  from "./ParkingLayout"
 
-export default function FloorContent(){
+export default function FloorContent() {
     let navigate = useNavigate()
     const dispatch = useDispatch()
     const { rooms } = useSelector(state => state.main)
-    const floorArr =<Layout1 rooms ={rooms}/>
+    const floorArr = <Layout1 rooms ={rooms}/>
 
     const location = window.location.href.split("/")
     const floor = location[location.length - 1]
     
-    
     const layout = [<Layout rooms ={rooms}/>,<Layout rooms ={rooms}/>]
 
-    for(let i=0; i< 12; i++){
+    for (let i = 0; i < 12; i++) {
         layout.push(floorArr)
     }
 
@@ -29,18 +28,14 @@ export default function FloorContent(){
     const layoutParking = [<ParkingLayout rooms ={rooms} />,<ParkingLayout rooms ={rooms}/>,<ParkingLayout rooms ={rooms}/>]
 
     function clickFloor(e) {
-        const floor = +e.target.firstChild.nodeValue;
-        
-      
+        const floor = +e.target.firstChild.nodeValue
         navigate(`/building/floor/${floor}`)
         dispatch(getHouseFloorAction(floor))
     }
+
     useEffect(()=>{
         dispatch(getHouseFloorAction(floor))
-    },[dispatch, floor])
-    
-    
- 
+    }, [dispatch, floor])
 
     return(
         <div className="FloorMainContent">
@@ -48,12 +43,10 @@ export default function FloorContent(){
                 <div className="floors-main-wrapper">
                     <div className="floors-content">
                         <div className="selected-floor">Հարկ {floor}</div>
-                        
                         <div className="floors-list" onClick={clickFloor} >
                             {floorsList.map((floorItem,id) =>
-                            // eslint-disable-next-line no-template-curly-in-string
-                            <div className = {`list-item ${floorItem === +floor? "active": ""}`} key= {id}>{floorItem}</div>
-                            
+                                // eslint-disable-next-line no-template-curly-in-string
+                                <div className = {`list-item ${floorItem === +floor? "active": ""}`} key= {id}>{floorItem}</div>
                             )}
                         </div>
                     </div>
@@ -63,7 +56,6 @@ export default function FloorContent(){
                             {parkingFloors.map((parking,id)=>
                                 <div className={`list-item ${parking === floor ?  "active": ""}`}key={id}>{parking}</div>
                             )}
-                            
                         </div>
                     </div>
                     <div className="badges-wrapper">
@@ -82,7 +74,6 @@ export default function FloorContent(){
                     </div>
                 </div>
             </div>
-
             <div className="RightSide">
                 <div className="ImageWrapper ">
                     {floor >= 3 ? <img src ={FloorLayout1} width="91%" alt=""/> : null}
@@ -100,8 +91,6 @@ export default function FloorContent(){
                         </div>
                         :null
                     )}
-                    
-                    
                 </div>
             </div>
         </div>

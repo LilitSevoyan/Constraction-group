@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit"
 import { 
     getRoomsByCount, 
     getAllRooms, 
@@ -9,13 +9,13 @@ import {
     getFindById,
     getMinMaxArea,
     postSubscribe
-} from "../../Components/axios/axios";
+} from "../../Components/axios/axios"
 
 export const getRoomsAction = createAsyncThunk(
     'main/getRoomsByCount',
     async (count) => {
         const rooms = await getRoomsByCount(count);
-        return rooms;
+        return rooms
     }
 )
 
@@ -23,7 +23,7 @@ export const getAllRoomsAction = createAsyncThunk(
     'main/getAllRooms',
     async()=>{
         const allRooms = await  getAllRooms()
-        return allRooms;
+        return allRooms
     }
 )
 
@@ -31,7 +31,7 @@ export const getMinMaxPriceAction = createAsyncThunk(
     'main/getMinMaxPrice',
     async ({minPrice, maxPrice})=>{
         const MinMax = await  getMinMaxPrice(minPrice,maxPrice)
-        return MinMax;
+        return MinMax
     }
 )
 
@@ -39,7 +39,7 @@ export const getMinMaxAreaAction = createAsyncThunk(
     'main/getMinMaxArea',
     async ({minArea, maxArea})=>{
         const MinMax = await  getMinMaxArea(minArea,maxArea)
-        return MinMax;
+        return MinMax
     }
 )
 

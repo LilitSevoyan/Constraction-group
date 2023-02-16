@@ -1,7 +1,9 @@
 import axios from "axios"
 
-export const getRoomsByCount = (count) =>{
-    return axios.get(`http://localhost:8080/rooms/${+count}`)
+const API_URL = process.env.REACT_APP_API_URL
+
+export const getRoomsByCount = (count) => {
+    return axios.get(`${API_URL}/rooms/${+count}`)
     .then((response) => {
         return response.data
     })
@@ -11,126 +13,117 @@ export const getRoomsByCount = (count) =>{
 }
 
 export const getAllRooms = () => {
-    return axios.get("http://localhost:8080")
+    return axios.get(`${API_URL}`)
     .then((response) => {
         return response.data
     })
 }
 
-export const getMinMaxPrice = (minPrice,maxPrice)=>{
-    if(maxPrice && !minPrice){
-        console.log("maximum price");
-        return axios.get(`http://localhost:8080/price/sort/max/${+maxPrice}`)
+export const getMinMaxPrice = (minPrice,maxPrice) => {
+    if (maxPrice && !minPrice) {
+        return axios.get(`${API_URL}/price/sort/max/${+maxPrice}`)
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
-    }else if(!maxPrice && minPrice){
-        return axios.get(`http://localhost:8080/sort/price/${+minPrice}`)
+    } else if (!maxPrice && minPrice) {
+        return axios.get(`${API_URL}/sort/price/${+minPrice}`)
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
-    }else{
-        return axios.get(`http://localhost:8080/sort/price/${+minPrice}/${+maxPrice}`)
+    } else {
+        return axios.get(`${API_URL}/sort/price/${+minPrice}/${+maxPrice}`)
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
-        }) 
-    }  
-}
-
-export const getMinMaxArea = (minArea,maxArea)=>{
-    console.log(minArea,maxArea)
-    if(maxArea && !minArea){
-        return axios.get(`http://localhost:8080/area/sort/max/${+maxArea}`)
-        .then((response) => {
-            return response.data
-        })
-        .catch(function (error) {
-            console.log(error);
-        }) 
-    }else if(!maxArea && minArea){
-        return axios.get(`http://localhost:8080/sort/area/${+minArea}`)
-        .then((response) => {
-            return response.data
-        })
-        .catch(function (error) {
-            console.log(error);
-        }) 
-    }else{
-        return axios.get(`http://localhost:8080/sort/area/${+minArea}/${+maxArea}`)
-        .then((response) => {
-            return response.data
-        })
-        .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
     }  
 }
 
-
-
-export const getFilter = (badge)=>{
-    return axios.get(`http://localhost:8080/badge/all/${badge}`)
+export const getMinMaxArea = (minArea,maxArea) => {
+    if (maxArea && !minArea) {
+        return axios.get(`${API_URL}/area/sort/max/${+maxArea}`)
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
-}
-
-export const getHouseFloor = (floor)=>{
-    return axios.get(`http://localhost:8080/floor/house/${floor}`)
-        .then((response) => {
-            console.log(response.data);
-            return response.data
-        })
-        .catch(function (error) {
-            console.log(error);
-        }) 
-}
-
-export const getMaxMinSelect = (badge)=>{
-    return axios.get(`http://localhost:8080/sort/${badge}`)
+    } else if (!maxArea && minArea) {
+        return axios.get(`${API_URL}/sort/area/${+minArea}`)
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
-       
-    
-}
-
-
-
-export const getFindById = (id)=>{
-    return axios.get(`http://localhost:8080/id/${id}`)
+    } else {
+        return axios.get(`${API_URL}/sort/area/${+minArea}/${+maxArea}`)
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
-       
-    
+    }  
 }
-export const postSubscribe = (email)=>{
-    return axios.post("http://localhost:8080/subscribe",{
+
+export const getFilter = (badge) => {
+    return axios.get(`${API_URL}/badge/all/${badge}`)
+        .then((response) => {
+            return response.data
+        })
+        .catch(function (error) {
+            console.log(error)
+        }) 
+}
+
+export const getHouseFloor = (floor) => {
+    return axios.get(`${API_URL}/floor/house/${floor}`)
+        .then((response) => {
+            console.log(response.data)
+            return response.data
+        })
+        .catch(function (error) {
+            console.log(error)
+        }) 
+}
+
+export const getMaxMinSelect = (badge) => {
+    return axios.get(`${API_URL}/sort/${badge}`)
+        .then((response) => {
+            return response.data
+        })
+        .catch(function (error) {
+            console.log(error)
+        }) 
+}
+
+export const getFindById = (id) => {
+    return axios.get(`${API_URL}/id/${id}`)
+        .then((response) => {
+            return response.data
+        })
+        .catch(function (error) {
+            console.log(error)
+        }) 
+}
+
+export const postSubscribe = (email) => {
+    return axios.post(`${API_URL}/subscribe`,{
         email
     })
         .then((response) => {
             return response.data
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         }) 
 }

@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from "react"
-import {Link} from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
-import {ArrowIcon} from "../../assets"
+import { ArrowIcon } from "../../../assets/index"
 import {
         getRoomsAction,
         getAllRoomsAction,
@@ -13,10 +13,9 @@ import {
 import HousesWrapper from "./HousesWrapper"
 import Floor from "./Floor"
 
-export default function HousesFilters({isToggle, setisToggle,setNumber}){
-    const dispatch = useDispatch();
+export default function HousesFilters({isToggle, setisToggle,setNumber}) {
+    const dispatch = useDispatch()
     const { rooms } = useSelector(state => state.main)
-    //const [clas,setClas] = useState({inputClass: ""})
     const [isToggleOn, setisToggleOn] = useState(true)
     const [data,setData] = useState({
         minArea:"",
@@ -26,63 +25,54 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}){
         category:"Առկա",
         select:""
     })
-    
-
-    //useEffect(() => {
-    //    console.log({rooms})
-    //}, [rooms])
-    
    
-    const DropdownClick=(e)=>{
-        e.preventDefault();
+    const DropdownClick = (e) => {
+        e.preventDefault()
         setisToggleOn(!isToggleOn)
-     
     }
+
     useEffect(() => {
         dispatch(getAllRoomsAction())
      }, [dispatch]) 
 
-    const clickRoomsCount = async (e) =>{
-        console.log({e})
+    const clickRoomsCount = async (e) => {
         const count  =+ e.target.firstChild.nodeValue
-        
         dispatch(getRoomsAction(count))
     }
     
-    const handleChange = async (e) =>{
-        let numbers = /^[0-9]+$|^$/;
-        if(e.target.type === "text"){
-            if(e.target.value.match(numbers)){
+    const handleChange = async (e) => {
+        let numbers = /^[0-9]+$|^$/
+        if (e.target.type === "text") {
+            if (e.target.value.match(numbers)) {
                 setData({ ...data,[e.target.name]: e.target.value })
                 console.log({'e.target.name': e.target.name, 'e.target.value': e.target.value})
-                const minPrice = e.target.name === 'minPrice' ? e.target.value : data.minPrice;
-                const maxPrice = e.target.name === 'maxPrice' ? e.target.value : data.maxPrice;
-                const minArea = e.target.name === 'minArea' ? e.target.value : data.minArea;
-                const maxArea = e.target.name === 'maxArea' ? e.target.value : data.maxArea;
-                if(e.target.name === "minPrice" || e.target.name === "maxPrice" ){
-                    
+                const minPrice = e.target.name === 'minPrice' ? e.target.value : data.minPrice
+                const maxPrice = e.target.name === 'maxPrice' ? e.target.value : data.maxPrice
+                const minArea = e.target.name === 'minArea' ? e.target.value : data.minArea
+                const maxArea = e.target.name === 'maxArea' ? e.target.value : data.maxArea
+                if (e.target.name === "minPrice" || e.target.name === "maxPrice" ) {
                     dispatch(getMinMaxPriceAction({minPrice, maxPrice}))
-                }else{
-                     dispatch(getMinMaxAreaAction({minArea, maxArea}))
+                } else {
+                    dispatch(getMinMaxAreaAction({minArea, maxArea}))
                 }
             }
-        }else{
+        } else {
             setData({ ...data,[e.target.name]: e.target.value }) 
         } 
     }
 
-    const change = async(e)=>{
-        console.log(e.target.value);
+    const change = async(e) => {
         setData({ ...data,[e.target.name]: e.target.value })
-        if(e.target.name === "category"){
+        if (e.target.name === "category") {
             const badge = e.target.value
             dispatch(getFilterAction(badge))
-        }else{
+        } else {
             const badge = e.target.value
             dispatch(getMaxMinSelectAction(badge))
         }  
     }
-    return(
+
+    return (
         <div className="MainContent">
             <div className="HousesFilters">
                 <div className="HeaderWrapper">
@@ -107,7 +97,6 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}){
                                     <option value="Ամրագրված">Ամրագրված(83)</option>
                                     <option value="Վաճառված">Վաճառված է</option>
                                 </select>
-                        
                             </div>
                             <div className="sort">
                                 <select name="select" value={data.select} onChange={change}  >
@@ -126,18 +115,17 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}){
                             Հարկեր
                             <span>(14)</span>
                             <ArrowIcon/>
-                            
                         </div>
-                        {!isToggleOn ? <Floor houseCard ={rooms}  toggle={isToggleOn} setToggle={setisToggleOn} />: null} 
+                        {!isToggleOn ? <Floor houseCard={rooms} toggle={isToggleOn} setToggle={setisToggleOn} /> : null} 
                         <div className="roomsCount">
                             <div className="field-title">
                                 Սենյակներ
                             </div>
-                            <div className="rooms-count "onClick={clickRoomsCount}>
-                                <div className="rooms-count-item ">1</div>
-                                <div className="rooms-count-item ">2</div>
-                                <div className="rooms-count-item ">3</div>
-                                <div className="rooms-count-item ">4</div>
+                            <div className="rooms-count" onClick={clickRoomsCount}>
+                                <div className="rooms-count-item">1</div>
+                                <div className="rooms-count-item">2</div>
+                                <div className="rooms-count-item">3</div>
+                                <div className="rooms-count-item">4</div>
                             </div>
                         </div>
                         <div className="inputs">
@@ -166,11 +154,10 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}){
                                 <div className="field-title">֏</div>
                             </div>
                         </div>
-                        
                     </div>
                     <div className="clear-filters-wrapper"></div>
                 </div>
-                <HousesWrapper card = {rooms} toggle={isToggle} setToggle ={setisToggle} setNumber={setNumber}/>
+                <HousesWrapper card={rooms} toggle={isToggle} setToggle={setisToggle} setNumber={setNumber}/>
             </div>
         </div>
     )

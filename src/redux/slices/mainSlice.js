@@ -18,7 +18,6 @@ const initialState = {
     subscribe:[]
 }
 
-
 export const mainSlice = createSlice({
     name: "main",
     initialState,
@@ -123,8 +122,7 @@ export const mainSlice = createSlice({
             .addCase(postSubscribeAction.rejected, (state) => {
                 state.subscribe = [];
                 state.loading = false;
-            })
-           
+            }) 
     }
 })
 

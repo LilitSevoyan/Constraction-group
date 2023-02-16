@@ -1,12 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {FiFilter} from 'react-icons/fi';
-import {RiParkingBoxLine} from 'react-icons/ri'
-import {Hamalir} from "../../assets";
+import React from "react"
+import { Link } from "react-router-dom"
+import { FiFilter } from 'react-icons/fi'
+import { RiParkingBoxLine } from 'react-icons/ri'
+import { Hamalir } from "../../../assets/index"
 
-export default function HouseWrapper({id}){
-    
-    
+export default function HouseWrapper({id}) {
 
     return(
         <div className="TopContent">
@@ -43,7 +41,6 @@ export default function HouseWrapper({id}){
                         </div>
                     </Link>
                     <Link to="/filter" className="item-card">
-                        
                         <div className="icon-wrapper">
                             <FiFilter/>
                         </div>

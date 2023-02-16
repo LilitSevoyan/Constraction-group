@@ -1,19 +1,20 @@
-import React,{useState} from "react";
-import {postSubscribeAction} from "../../../redux/actions/mainAction"
+import React, { useState } from "react"
+import { postSubscribeAction } from "../../../redux/actions/mainAction"
 import { useDispatch} from 'react-redux'
 
-export default function HomepageContact(){
+export default function HomepageContact() {
     const dispatch = useDispatch()
-    const [data, setdata] = useState("");
+    const [data, setdata] = useState("")
 
     const handlerChange = (event) => {
-		setdata(event.target.value)
-	}
+		    setdata(event.target.value)
+	  }
     const heandleSubmit = (e) => { 
         e.preventDefault()
         dispatch(postSubscribeAction(data))
         setdata("")
-	}
+	  }
+    
     return(
       <div className="HomepageContact">
         <div className="LeftSide">

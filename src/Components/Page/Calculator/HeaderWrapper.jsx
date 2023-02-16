@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import {GrLocation} from "react-icons/gr"
+import { GrLocation } from "react-icons/gr"
 
-export default function HeaderWrapper(){
-  return(
+export default function HeaderWrapper() {
+  return (
     <div className="TopContent">
       <div className="AddressWrapper">
         <div className="address-left-wrapper">
@@ -16,11 +16,9 @@ export default function HeaderWrapper(){
             <span>
               <span className="ant-breadcrumb-link color">Հաշվիչ</span>
             </span>
-            
           </div>
         </div>
         <div className="address-right-wrapper">
-          
           <Link to="/address" className="item-card">
             <div className="icon-wrapper">
               <GrLocation/>
@@ -32,9 +30,6 @@ export default function HeaderWrapper(){
           </Link>
         </div>
       </div>
-    </div>
-
-        
+    </div>   
   )
-
 }

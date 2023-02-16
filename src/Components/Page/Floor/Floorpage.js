@@ -2,8 +2,8 @@ import React,{useEffect} from "react"
 import HeaderWrapper from "./HeaderWrapper"
 import FloorContent from "./FloorContent"
 
+export default function Floorpage() {
 
-export default function Floorpage(){
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -13,7 +13,6 @@ export default function Floorpage(){
       <HeaderWrapper/>
       <FloorContent/>
     </div>
-    
   )
 }
 

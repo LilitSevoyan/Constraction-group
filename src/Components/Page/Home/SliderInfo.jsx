@@ -1,30 +1,32 @@
-import React from "react";
-import {useState,useEffect} from "react";
-import {Link}  from "react-router-dom";
-import {SliderData} from "../../Slider/SlideData"
-import {AiOutlineLeft,AiOutlineRight} from "react-icons/ai"
-import {FiFilter} from 'react-icons/fi';
-import {BsCalculatorFill} from "react-icons/bs"
-import {GrLocation} from "react-icons/gr"
+import React from "react"
+import { useState, useEffect } from "react"
+import { Link }  from "react-router-dom"
+import { SliderData } from "../../Slider/SlideData"
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
+import { FiFilter } from 'react-icons/fi'
+import { BsCalculatorFill } from "react-icons/bs"
+import { GrLocation } from "react-icons/gr"
 
-export default function SliderInfo({slides, link}){
+export default function SliderInfo({slides, link}) {
     
   const [current,setCurrent]= useState(0)
   const length = slides.length
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent(current === length - 1 ? 0 : current+1)
-    }, 3000);
-    return () => clearInterval(interval);
-  });
+      setCurrent(current === length - 1 ? 0 : current + 1)
+    }, 3000)
+    return () => clearInterval(interval)
+  })
    
   const nextSlide = () =>{
-    setCurrent(current === length - 1 ? 0 : current+1)
+    setCurrent(current === length - 1 ? 0 : current + 1)
   }
+
   const prevSlide = () =>{
-    setCurrent(current === 0 ? length-1 : current - 1)
+    setCurrent(current === 0 ? length - 1 : current - 1)
   }
+
 return(
     <div>
       <div className="slider">

@@ -1,24 +1,15 @@
-import React,{useEffect,useState} from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import {FiFilter} from 'react-icons/fi';
+import { FiFilter } from 'react-icons/fi'
 
+export default function HeaderWrapper() {
+  const [floor, setFloor] = useState("")
 
-
-
-export default function HeaderWrapper(){
-  const[floor,setFloor] = useState("")
-
-  
-useEffect(()=>{
-  const location = window.location.href.split("/")
-  setFloor(location[location.length - 1])
-},[floor])
+  useEffect(()=>{
+    const location = window.location.href.split("/")
+    setFloor(location[location.length - 1])
+  }, [floor])
     
-
-  
-
-  
-  console.log(floor);
   return(
     <div className="TopContent">
       <div className="AddressWrapper">
@@ -39,7 +30,6 @@ useEffect(()=>{
           </div>
         </div>
         <div className="address-right-wrapper">
-          
           <Link to="/filter" className="item-card">
             <div className="icon-wrapper">
               <FiFilter/>
@@ -51,9 +41,6 @@ useEffect(()=>{
           </Link>
         </div>
       </div>
-    </div>
-
-        
+    </div>      
   )
-
 }

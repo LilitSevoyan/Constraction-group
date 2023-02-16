@@ -1,20 +1,18 @@
-import React from "react";
-//import {HouseFloor} from "../../axios/axios"
+import React from "react"
 import { getHouseFloorAction} from '../../../redux/actions/mainAction'
 import { useDispatch} from 'react-redux'
 
-export default function Floor({houseCard,toggle,setToggle}){
-   
-    const dispatch = useDispatch();
+export default function Floor({houseCard,toggle,setToggle}) {
+
+    const dispatch = useDispatch()
  
-    const clickFloor = async(e)=>{
-        console.log({e})
+    const clickFloor = async(e) => {
         const floor  =+ e.target.firstChild.nodeValue
         dispatch(getHouseFloorAction(floor))
         setToggle(!toggle)
     }
-    return(
 
+    return (
         <div className="ant-dropdown-open">
             <div className="filter-floors-list">
                 <div onClick={clickFloor}>
@@ -33,9 +31,7 @@ export default function Floor({houseCard,toggle,setToggle}){
                     <div className="list-item">13</div>
                     <div className="list-item">14</div>
                 </div>
-               
             </div>
-            
         </div>
     )
 }

@@ -1,29 +1,29 @@
 import React,{useEffect} from "react"
-//import "./Components/Style/App.css";
-import SliderInfo from "./SliderInfo";
+import SliderInfo from "./SliderInfo"
 import {SliderData} from "../../Slider/SlideData"
-import HomepageAbout from "./HomepageAbout";
-import HomepageContact from "./HomepageContact";
-import { useNavigate } from "react-router-dom";
+import HomepageAbout from "./HomepageAbout"
+import HomepageContact from "./HomepageContact"
+import { useNavigate } from "react-router-dom"
 
+export default function Homepage() {
 
-export default function Homepage(){
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
 
-  let navigate = useNavigate();
-    const heandleClick =(e)=>{
-        e.preventDefault();
+    let navigate = useNavigate()
+
+    const heandleClick = (e) => {
+        e.preventDefault()
         window.scrollTo(0, 0)
-        navigate("/buildings");
+        navigate("/buildings")
     }
-  return(
-    <header>
-      <SliderInfo link={heandleClick} slides={SliderData}/>
-      <HomepageAbout link={heandleClick} />
-      <HomepageContact/>
-    </header>   
-  )
 
+    return(
+        <header>
+            <SliderInfo link={heandleClick} slides={SliderData}/>
+            <HomepageAbout link={heandleClick} />
+            <HomepageContact/>
+        </header>   
+    )
 }

@@ -1,17 +1,18 @@
-import React from "react";
-import {Link,useNavigate}  from "react-router-dom";
-import {FaGreaterThan,FaBasketballBall, FaCar } from "react-icons/fa";
-import {GiSofa, GiLindenLeaf} from "react-icons/gi";
+import React from "react"
+import { Link, useNavigate }  from "react-router-dom"
+import { FaGreaterThan, FaBasketballBall, FaCar } from "react-icons/fa"
+import { GiSofa, GiLindenLeaf } from "react-icons/gi"
 import AsNavFor from "../../Slider/ReactSlick"
 
-export default function HomepageAbout({link}){
-    let navigate = useNavigate();
-    const heandleClick =(e)=>{
-        e.preventDefault();
+export default function HomepageAbout({link}) {
+    let navigate = useNavigate()
+    const heandleClick = (e) => {
+        e.preventDefault()
         window.scrollTo(0, 0)
-        navigate("/about");
+        navigate("/about")
     }
-    return(
+
+    return (
       <div className="homePageAbout">
         <h1 className="HomepageAboutTitle">ՀԱՄԱԼԻՐԻ ՄԱՍԻՆ</h1>
         <div className="AboutContent">
@@ -56,7 +57,7 @@ export default function HomepageAbout({link}){
               <Link to ="/calculator"> այստեղ</Link>
             </div>
             <div className="btnsWrapper">
-              <button className="PrimaryButton dark"onClick={heandleClick}>
+              <button className="PrimaryButton dark" onClick={heandleClick}>
                 <span className="title">Մեր մասին</span>
               </button>
               <button className="PrimaryButton " onClick={link}>

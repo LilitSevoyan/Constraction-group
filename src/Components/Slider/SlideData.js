@@ -1,5 +1,4 @@
-import{construction1,construction2,construction3} from "../assets"
-
+import{construction1,construction2,construction3} from "../../assets"
 
 export const SliderData = [
     {images:construction1},

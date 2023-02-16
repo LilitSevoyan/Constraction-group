@@ -1,47 +1,44 @@
-import React,{useState} from "react";
-import {useNavigate} from "react-router-dom"
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-export default function ParkingLayout({ rooms}){
+export default function ParkingLayout({rooms}) {
 
     const houseNumber = rooms.map((arr)=> arr.houseNumber)
     const id = rooms.map((arr)=> arr._id)
     const badge = rooms.map((arr)=>arr.badge)
 
-    const [state, setState] = useState("");
-    const [number, setNumber] = useState("");
-    const [color, setColor] = useState("");
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [state, setState] = useState("")
+    const [number, setNumber] = useState("")
+    const [color, setColor] = useState("")
+    const [position, setPosition] = useState({ x: 0, y: 0 })
     const { x, y } = position
-    let navigate = useNavigate();
+    let navigate = useNavigate()
     
-    let className = [];
-    for(let i=0; i< badge.length; i++){
-        if(badge[i] === "Առկա"){
-            console.log(badge[i])
-            className.push("color-green");
-        }else if(badge[i] === "Վաճառված"){
+    let className = []
+    for (let i = 0; i < badge.length; i++) {
+        if (badge[i] === "Առկա") {
+            className.push("color-green")
+        } else if (badge[i] === "Վաճառված") {
             className.push("color-red")
-        }else{
+        } else {
             className.push("color-yellow")
         }
     }
-    const handleUrl = (e)=>{
-        const id1 = id.filter((arr,i)=>i+1 === +number)
+    const handleUrl = (e) => {
+        const id1 = id.filter((arr,i) => i+1 === +number)
         navigate(`${id1}`)
     }
-    const handleMouseOver =(e) =>{
+    const handleMouseOver = (e) => {
         setNumber(+e.target.id)
         setColor(className.filter((arr,i) => i === +e.target.id-1))
-        
     }
 
-   
-    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
+    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY })
+
     return(
         <div>
             <svg onMouseOver ={setFromEvent} width="1811" height="1268" viewBox="0 0 1811 1275" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g onMouseOut={() => {setState("")}}  onMouseOver={handleMouseOver}> 
-                
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[0]} id="1" d="M201.736 838.5V737H250.758V838.5H201.736Z"  fillOpacity="0.198426573" strokeWidth="3"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[1]} id="2" d="M301.833 838.5V737H250.501V838.5H301.833Z"  fillOpacity="0.198426573" strokeWidth="3"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[2]} id="3" d="M311.073 838.5V737H359.325V838.5H311.073Z"  fillOpacity="0.198426573" strokeWidth="3"/>
@@ -157,35 +154,28 @@ export default function ParkingLayout({ rooms}){
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[112]} id="113" d="M1496.85 1113V1028H1445.51V1113H1496.85Z" fillOpacity="0.198426573" strokeWidth="3"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[113]} id="114" d="M1504.03 1029V944H1552.29V1029H1504.03Z" fillOpacity="0.198426573" strokeWidth="3"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[114]} id="115" d="M1604.64 1029V944H1553.31V1029H1604.64Z" fillOpacity="0.198426573" strokeWidth="3"/>
-                
                 </g> 
             </svg>
-            
             <div 
                 style={{
-                        display: state ? 'block' : 'none',
-                        position: 'fixed',
-                        top: y,
-                        left:x,
-                        zIndex: "1000"
-                        
-                        
+                    display: state ? 'block' : 'none',
+                    position: 'fixed',
+                    top: y,
+                    left:x,
+                    zIndex: "1000"  
                 }}
             >   
-                
                 {state && (
                     <div className={`tooltip-wrapper ${color}`}>
-                        {houseNumber.map((arr,i)=>i+1 === number ?
-                            <div className="tooltip-left-part" key ={i}>
+                        {houseNumber.map((arr,i)=>i+1 === number 
+                            ? <div className="tooltip-left-part" key ={i}>
                                 <span className="building-number">N {arr}</span> 
                             </div>
-                            :null
+                            : null
                         )}
-                        
                     </div>
                 )}
             </div>
-            
         </div>
     )
 }

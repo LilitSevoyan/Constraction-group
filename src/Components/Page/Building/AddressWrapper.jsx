@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import {FaParking} from "react-icons/fa"
-import {GrLocation} from "react-icons/gr"
-import {RiParkingBoxLine} from 'react-icons/ri'
+import { FaParking } from "react-icons/fa"
+import { GrLocation } from "react-icons/gr"
+import { RiParkingBoxLine } from 'react-icons/ri'
 import Image from "./ImageWrapper"
 
-export default function AddressWrapper(){
-  return(
+export default function AddressWrapper() {
+  return (
     <div className="TopContent">
       <div className="AddressWrapper">
         <div className="address-left-wrapper">
@@ -19,7 +19,6 @@ export default function AddressWrapper(){
             <span>
               <span className="ant-breadcrumb-link color">Համալիր</span>
             </span>
-            
           </div>
         </div>
         <div className="address-right-wrapper">
@@ -27,7 +26,6 @@ export default function AddressWrapper(){
             <Link to ="/building/floor/-1">
               <FaParking/>
               <RiParkingBoxLine/>
-              
             </Link>
           </div>
           <Link to="/address" className="item-card">
@@ -42,9 +40,6 @@ export default function AddressWrapper(){
         </div>
       </div>
       <Image/>  
-    </div>
-
-        
+    </div>  
   )
-
 }

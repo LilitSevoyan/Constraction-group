@@ -1,58 +1,43 @@
-import React,{useState} from "react";
-import {useNavigate} from "react-router-dom"
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-export default function Layout1({rooms}){
-    const [state, setState] = useState("");
-    const [number, setNumber] = useState("");
-    const [color, setColor] = useState("");
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+export default function Layout1({rooms}) {
+    const [state, setState] = useState("")
+    const [number, setNumber] = useState("")
+    const [color, setColor] = useState("")
+    const [position, setPosition] = useState({ x: 0, y: 0 })
     const { x, y } = position
-    let navigate = useNavigate();
+    let navigate = useNavigate()
    
-
     const houseNumber = rooms.map((arr)=> arr.houseNumber)
     
-    const id = rooms.map((arr)=> arr._id)
-    const badge = rooms.map((arr)=>arr.badge)
-    const area = rooms.map((arr)=> arr.area)
- 
-    const a =houseNumber.map((arr,i)=>arr.split("-"))
-    const b = a.map((arr,i)=>arr[1].split("("))
-    const c =b.map((arr,i)=>arr[0])
-   console.log(c[6])
-     
-    /*{c.map((arr,i)=>arr[i] === number ?
-                    <div className="tooltip-left-part" key ={i}>
-                        {houseNumber.map((abg,i)=>
-                        <span className="building-number">N {abg}</span> 
-                        )}
-                    </div>
-                :null)}
-                */
-    let className = [];
-    for(let i=0; i< badge.length; i++){
-        if(badge[i] === "Առկա"){
-            console.log(badge[i])
-            className.push("color-green");
-        }else if(badge[i] === "Վաճառված"){
+    const id = rooms.map((arr) => arr._id)
+    const badge = rooms.map((arr) => arr.badge)
+    const area = rooms.map((arr) => arr.area)
+
+    let className = []
+    for (let i = 0; i < badge.length; i++) {
+        if( badge[i] === "Առկա") {
+            className.push("color-green")
+        } else if (badge[i] === "Վաճառված") {
             className.push("color-red")
-        }else{
+        } else {
             className.push("color-yellow")
         }
     }
 
-    const handleMouseOver =(e) =>{
+    const handleMouseOver = (e) => {
         setNumber(+e.target.id)
         setColor(className.filter((arr,i) => i === +e.target.id-1))
     }
     
-console.log(number)
-    const handleUrl = (e)=>{
-       const id1 = id.filter((arr,i)=>i+1 === +number)
+    const handleUrl = (e) => {
+       const id1 = id.filter((arr,i) => i+1 === +number)
        navigate(`${id1}`)
     }
 
-    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
+    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY })
+
     return(
         <div>
             <svg onMouseOver ={setFromEvent} width="2114" height="1504" viewBox="0 0 2125 1515" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,37 +65,36 @@ console.log(number)
                     <path onClick={handleUrl} onMouseOver={() => {setState(2)}} className={className[20]} id="21" d="M1656 1024H1484V1106.5H1447V1151H1484V1228.5H1539.5V1151H1656V1024Z" strokeWidth="3"  fillOpacity="0.198426573"  />
                     <path onClick={handleUrl} onMouseOver={() => {setState(2)}} className={className[21]} id="22" d="M1158 1120.5H1343V1150H1418V1273.5H1177V1258L1179.5 1244L1182 1235L1189 1224L1197 1218H1209L1187 1181.5L1158 1153V1120.5Z"  strokeWidth="3" fillOpacity="0.198426573"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(3)}} className={className[22]} id="23" d="M1177 1287.5V1273.5H1448.5V1427.5H1158L1157.5 1393L1161 1391.5L1180.5 1373.5L1193.5 1356L1207.5 1329L1199 1326.5L1190.5 1320.5L1185.5 1312.5L1180.5 1300L1177 1287.5Z"  strokeWidth="3"  fillOpacity="0.198426573" />
-                    <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[23]} id="24"d="M1571.5 1273.5H1447.5V1427.5H1625.5V1388.5H1571.5V1273.5Z"  strokeWidth="3" fillOpacity="0.198426573" />
-                      
+                    <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[23]} id="24"d="M1571.5 1273.5H1447.5V1427.5H1625.5V1388.5H1571.5V1273.5Z"  strokeWidth="3" fillOpacity="0.198426573" /> 
                  </g>
             </svg>
- 
-         <div 
-         style={{
-           display: state ? 'block' : 'none',
-           position: 'fixed',
-           top: y,
-           left:x,
-           zIndex: "1000"
-         }}
-     >
-         {state && (
-             <div className={`tooltip-wrapper ${color}`}>
-                {houseNumber.map((arr,i)=>i+1 === number ?
-                    <div className="tooltip-left-part" key ={i}>
-                        <span className="building-number">N {arr}</span> 
+            <div 
+                style={{
+                  display: state ? 'block' : 'none',
+                  position: 'fixed',
+                  top: y,
+                  left:x,
+                  zIndex: "1000"
+                }}
+            >
+                {state && (
+                    <div className={`tooltip-wrapper ${color}`}>
+                        {houseNumber.map((arr,i)=>i+1 === number 
+                            ? <div className="tooltip-left-part" key ={i}>
+                                <span className="building-number">N {arr}</span> 
+                            </div>
+                            : null
+                        )}
+                        {area.map((arr,i)=>i+1 === number 
+                            ? <div className="tooltip-right-part" key ={i}>
+                               <span className="floors-count">{state} սենյակ</span>
+                               <span className="houses-count">{arr} մ <sup>2</sup></span>
+                            </div>
+                            : null
+                        )}
                     </div>
-                :null)}
-                    {area.map((arr,i)=>i+1 === number ?
-                    <div className="tooltip-right-part" key ={i}>
-                        <span className="floors-count">{state} սենյակ</span>
-                        <span className="houses-count">{arr} մ <sup>2</sup></span>
-               </div>
-               :null)}
-             </div>
-         )}
-
-     </div>
-     </div>
+                )}
+            </div>
+        </div>
     )
 }

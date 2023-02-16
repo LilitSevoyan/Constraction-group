@@ -1,13 +1,14 @@
-import React,{useState} from "react"
-import {Close} from "../../assets/index"
+import React, { useState } from "react"
+import { Close } from "../../../assets/index"
 import axios from "axios"
-import {useFormik } from "formik"
+import { useFormik } from "formik"
 import * as Yup from "yup"
 
-export default function BookAnApartment({number,number1}){
+export default function BookAnApartment({number,number1}) {
+
+    const API_URL = process.env.REACT_APP_API_URL
    
     const [isActive,setisActive] = useState(false)
-    console.log("number" +number,"number1" + number1)
     const formik = useFormik({
       initialValues: {
         fullName: '',
@@ -21,9 +22,7 @@ export default function BookAnApartment({number,number1}){
         phoneNumber: Yup.number().min(9).required(),
       }),
       onSubmit: values => {
-        console.log(JSON.stringify(values, null, 2));
-        
-        axios.post("http://localhost:8080/book",{
+        axios.post(`${API_URL}/book`, {
             fullName : formik.values.fullName,
             email:formik.values.email,
             phoneNumber:formik.values.phoneNumber,
@@ -34,15 +33,12 @@ export default function BookAnApartment({number,number1}){
         
         setisActive(!isActive)
       },
-    });
+    })
     const closeBtn = () =>{
         setisActive(!isActive)
     }
     
-
-    
-    return(
-
+    return (
         <div className={`ant-model-container ${isActive ? "ant-model-active" : ""}`}>
             <div className="ant-model">
                 <div className="ant-modal-content">
@@ -96,7 +92,6 @@ export default function BookAnApartment({number,number1}){
                                     onChange ={formik.handleChange}
                                     onBlur={formik.handleBlur} 
                                 />
-                                
                             </div> 
                             <div className="custom-input-group">
                                 <label>Համար</label>
@@ -114,7 +109,6 @@ export default function BookAnApartment({number,number1}){
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
