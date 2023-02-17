@@ -1,16 +1,17 @@
 //@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
-@import "./homepage/home.scss";
-@import "./aboutpage/about.scss";
-@import "./buildingpage/building.scss";
-@import "./contactpage/contact.scss";
-@import "./addresspage/address.scss";
-@import "./privacypage/privacy.scss";
-@import "./calculator/calculator.scss";
-@import "./floorpage/floor.scss";
-@import "./filterpage/housesfilter";
-@import "./housepage/house.scss";
-@import "./notFoud//notFound.scss";
+@import "./components/homepage/home.scss";
+@import "./components/aboutpage/about.scss";
+@import "./components/buildingpage/building.scss";
+@import "./components/contactpage/contact.scss";
+@import "./components/addresspage/address.scss";
+@import "./components/privacypage/privacy.scss";
+@import "./components/calculator/calculator.scss";
+@import "./components/floorpage/floor.scss";
+@import "./components/filterpage/housesfilter";
+@import "./components/housepage/house.scss";
+@import "./components/notFoud/notFound.scss";
+@import "./components/language//language.scss";
 
 
 *{

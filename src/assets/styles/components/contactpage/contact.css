@@ -1,19 +1,16 @@
 .MainContent {
   min-height: calc(100vh - 400px) !important;
 }
-
 .MainContent .ContactWrapper {
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
 }
-
 .MainContent .ContactWrapper .ContactImageWrapper {
   padding-top: calc(33% - 80px);
   position: relative;
 }
-
 .MainContent .ContactWrapper .ContactImageWrapper .transparent-bg {
   position: absolute;
   top: 0;
@@ -23,7 +20,6 @@
   background-color: rgba(0, 0, 0, 0.48);
   padding: 7.5%;
 }
-
 .MainContent .ContactWrapper .ContactImageWrapper .transparent-bg .contact-main-title {
   font-size: 3.5vw;
   font-family: Bold;
@@ -39,26 +35,21 @@
   justify-content: space-between;
   position: relative;
 }
-
 .ContactMainContent .LeftSide .line {
   width: 100%;
   border-top: 1px solid #d9d9d9;
   margin: 30px 0;
 }
-
 .ContactMainContent .LeftSide .contact-items {
   display: flex;
 }
-
 .ContactMainContent .LeftSide .item-card:first-child {
   margin-right: 40px;
 }
-
 .ContactMainContent .LeftSide .item-card {
   display: flex;
   align-items: center;
 }
-
 .ContactMainContent .LeftSide .item-card .icon-wrapper {
   height: 50px;
   width: 50px;
@@ -68,18 +59,15 @@
   border-radius: 6px;
   background-color: #f5f6f7;
   margin-right: 20px;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 .ContactMainContent .LeftSide .item-card .icon-wrapper svg path {
   fill: #202020;
 }
-
 .ContactMainContent .LeftSide .item-card .item-card-content-title {
   margin-bottom: 5px;
   font-size: 16px;
 }
-
 .ContactMainContent .LeftSide .item-card .item-card-content-text {
   color: #666;
   overflow: hidden;
@@ -88,56 +76,46 @@
   font-family: Regular;
   font-size: 14px;
 }
-
 .ContactMainContent .LeftSide .social-wrapper {
   width: 90px;
   display: flex;
   justify-content: space-between;
 }
-
 .ContactMainContent .LeftSide .social-wrapper svg {
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
-
 .ContactMainContent .LeftSide .social-wrapper svg rect {
   fill: #202020;
 }
-
 .ContactMainContent .LeftSide .social-wrapper svg path {
   fill: #fff;
 }
-
 .ContactMainContent .LeftSide, .ContactMainContent .RightSide {
   width: calc(50% - 30px);
 }
-
 .ContactMainContent .subtitle {
   font-family: Bold;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   margin-bottom: 10px;
   color: #5282c1;
 }
-
 .ContactMainContent .description {
   font-family: Regular;
   color: #666;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   margin-bottom: 12px;
 }
-
 .ContactMainContent a, .ContactMainContent a:hover {
   text-decoration: none;
   color: inherit;
 }
-
 .ContactMainContent .RightSide {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .ContactMainContent .RightSide .fields-wrapper {
   margin-top: 15px;
   flex-grow: 1;
@@ -145,20 +123,16 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 .ContactMainContent .RightSide .fields-wrapper .border-red {
   border: 1px solid red;
 }
-
 .ContactMainContent .RightSide .fields-wrapper .fields-horizontal {
   display: flex;
   justify-content: space-between;
 }
-
 .ContactMainContent .RightSide .fields-wrapper .fields-horizontal .custom-input-group {
   width: calc(50% - 5px);
 }
-
 .ContactMainContent .RightSide .fields-wrapper input, .ContactMainContent .RightSide .fields-wrapper textarea {
   padding: 12px;
   width: 100%;
@@ -168,12 +142,10 @@
   font-size: 14px;
   font-weight: 400;
 }
-
 .ContactMainContent .RightSide .fields-wrapper textarea {
   resize: none;
   height: 100px;
 }
-
 .ContactMainContent .RightSide .fields-wrapper button, .ContactMainContent .RightSide .fields-wrapper input, .ContactMainContent .RightSide .fields-wrapper textarea {
   margin: 0;
   color: inherit;
@@ -181,7 +153,6 @@
   font-family: inherit;
   line-height: inherit;
 }
-
 .ContactMainContent .RightSide .fields-wrapper .PrimaryButton {
   display: flex;
   align-items: center;
@@ -193,7 +164,7 @@
   padding: 0 35px;
   border: none;
   text-transform: capitalize;
-  transition: all .5s ease 0s;
+  transition: all 0.5s ease 0s;
   background-color: #5282c1;
   letter-spacing: 1px;
   font-family: Medium;
@@ -206,7 +177,6 @@
     padding-top: 300px !important;
   }
 }
-
 @media (max-width: 800px) {
   .ContactWrapper .ContactImageWrapper {
     background-size: cover;
@@ -214,7 +184,6 @@
     text-align: center;
   }
 }
-
 @media (max-width: 650px) {
   .ContactImageWrapper .transparent-bg .contact-main-title {
     background-size: cover;
@@ -222,7 +191,6 @@
     text-align: left !important;
   }
 }
-
 @media (max-width: 1100px) {
   .ContactMainContent {
     padding-bottom: 50px;
@@ -238,7 +206,6 @@
     margin-top: 40px;
   }
 }
-
 @media (max-width: 530px) {
   .ContactMainContent {
     padding-bottom: 50px;
@@ -255,7 +222,6 @@
     margin: 30px 0 !important;
   }
 }
-
 @media (max-width: 800px) {
   .ContactMainContent {
     flex-direction: column;
@@ -263,23 +229,19 @@
     width: 90%;
   }
 }
-
 @media (max-width: 700px) {
   .ContactMainContent {
     width: 80%;
   }
 }
-
 @media (max-width: 630px) {
   .ContactMainContent {
     width: 70%;
   }
 }
-
 @media (max-width: 530px) {
   .ContactMainContent {
     flex-direction: column;
     width: 60%;
   }
 }
-/*# sourceMappingURL=contact.css.map */

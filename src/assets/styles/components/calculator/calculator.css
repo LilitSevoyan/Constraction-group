@@ -4,13 +4,11 @@
   justify-content: space-between;
   padding: 3.75% 7.5%;
 }
-
 .CalcMainContent .LeftSide {
   display: flex;
   flex-direction: column;
   width: calc(60% - 30px);
 }
-
 .CalcMainContent .LeftSide .calc-title {
   font-size: 20px;
   font-weight: 600;
@@ -20,25 +18,20 @@
   align-items: center;
   height: 40px;
 }
-
 .CalcMainContent .LeftSide .calc-title .bank-icon-wrapper {
   background-color: #f9f8f9;
   border-radius: 4px;
 }
-
 .CalcMainContent .LeftSide .calc-title .bank-icon-wrapper img {
   width: 120px;
 }
-
 .CalcMainContent .LeftSide .fields-horizontal {
   display: flex;
   justify-content: space-between;
 }
-
 .CalcMainContent .LeftSide .fields-horizontal .ant-select-single {
   width: 100%;
 }
-
 .CalcMainContent .LeftSide .fields-horizontal .ant-select {
   font-weight: 400;
   padding: 12px;
@@ -50,20 +43,16 @@
   border: 1px solid #dddedf;
   border-radius: 6px;
 }
-
 .CalcMainContent .LeftSide .custom-input-group:first-child {
   flex-grow: 1;
   margin-right: 10px;
 }
-
 .CalcMainContent .LeftSide .custom-input-group:last-child {
   width: 200px;
 }
-
 .CalcMainContent .LeftSide .custom-input-group {
   margin-bottom: 20px;
 }
-
 .CalcMainContent .LeftSide .custom-input-group label {
   display: block;
   font-size: 13px;
@@ -71,11 +60,9 @@
   color: #202020;
   margin-bottom: 8px;
 }
-
 .CalcMainContent .LeftSide .custom-input-group option {
   padding: 5px 0;
 }
-
 .CalcMainContent .LeftSide .custom-input-group input {
   padding: 12px;
   width: 100%;
@@ -85,22 +72,18 @@
   font-size: 14px;
   font-weight: 400;
 }
-
 .CalcMainContent .LeftSide .custom-input-group input:focus {
-  border: 2px solid  #5282c1;
+  border: 2px solid #5282c1;
   outline: none;
 }
-
 .CalcMainContent .LeftSide .custom-input-group .invalid {
   border: 1px solid red;
 }
-
 .CalcMainContent .LeftSide .btnsWrapper {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
 }
-
 .CalcMainContent .LeftSide .btnsWrapper .PrimaryButton {
   width: calc(50% - 5px);
   display: flex;
@@ -111,20 +94,17 @@
   border-radius: 4px;
   padding: 0 35px;
   border: none;
-  transition: all .5s ease 0s;
+  transition: all 0.5s ease 0s;
   letter-spacing: 1px;
   background-color: #5282c1;
 }
-
 .CalcMainContent .LeftSide .btnsWrapper .dark {
   color: #202020;
   background: #efeff0 !important;
 }
-
 .CalcMainContent .RightSide {
   width: 40%;
 }
-
 .CalcMainContent .RightSide .calc-title {
   font-size: 20px;
   font-weight: 600;
@@ -134,7 +114,6 @@
   align-items: center;
   height: 40px;
 }
-
 .CalcMainContent .RightSide .result-box {
   width: 100%;
   padding: 22px 20px;
@@ -142,7 +121,6 @@
   border-radius: 6px;
   margin-top: 46px;
 }
-
 .CalcMainContent .RightSide .result-box .result-box-row {
   font-size: 16px;
   display: flex;
@@ -150,13 +128,11 @@
   align-items: center;
   margin-bottom: 12px;
 }
-
 .CalcMainContent .RightSide .result-box .result-box-row .result-box-row-text {
   display: flex;
   align-items: center;
   font-weight: 600;
 }
-
 .CalcMainContent .RightSide .result-box .result-box-row .result-box-row-text svg {
   width: 18px;
   height: 18px;
@@ -167,7 +143,6 @@
   margin: 0 auto 60px;
   overflow-x: auto;
 }
-
 .results-table table {
   border-radius: 4px;
   border-collapse: collapse;
@@ -176,23 +151,18 @@
   white-space: nowrap;
   max-width: 100%;
 }
-
 .results-table table thead {
   width: 100%;
   background-color: #5282c1;
 }
-
 .results-table table thead th {
   padding: 10px;
 }
-
 .results-table table tbody {
   width: 100%;
 }
-
 .results-table table tbody td {
   border: 1px solid #c3c3c3;
   padding: 4px 10px;
   font-weight: 400;
 }
-/*# sourceMappingURL=calculator.css.map */

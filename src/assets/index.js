@@ -37,3 +37,7 @@ export {ReactComponent as Upload} from "./images/upload.svg"
 export {ReactComponent as Download} from "./images/download.svg"
 export {ReactComponent as Close} from "./images/close.svg"
 export {ReactComponent as images} from "./images/img.svg"
+
+export {ReactComponent as FlagArm} from "./images/flags/armenia.svg"
+export {ReactComponent as FlagRu} from "./images/flags/russia.svg"
+export {ReactComponent as FlagUs} from "./images/flags/united-states.svg"

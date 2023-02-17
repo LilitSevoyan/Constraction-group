@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,IAAI;EACX,MAAM,EAAC,kBAAkB;CAC5B",
-    "sources": [
-        "address.scss"
-    ],
-    "names": [],
-    "file": "address.css"
-}
+{"version":3,"sources":["address.scss","address.css"],"names":[],"mappings":"AACA;EACI,WAAA;EACA,0BAAA;ACAJ","file":"address.css"}

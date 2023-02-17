@@ -98,7 +98,7 @@ export default function ContactWrapper() {
                             />
                         </div>
                     </div>
-                    <div className="custom-input-group" id = "phone">
+                    <div className="custom-input-group" id="phone">
                         <input type="text" name="phoneNumber" placeholder="Հեռ. համար" autoComplete="off"
                             className={`${formik.touched.phoneNumber && formik.errors.phoneNumber ? "border-red" : ""}`}
                             value={formik.values.phoneNumber} 
@@ -106,7 +106,7 @@ export default function ContactWrapper() {
                             onBlur={formik.handleBlur} 
                         />
                     </div>
-                    <div className="custom-input-group" id = "message">
+                    <div className="custom-input-group" id="message">
                         <textarea name="message" placeholder="Ձեր հաղորդագրոթյունը" maxLength="30" 
                             className={`${formik.touched.message && formik.errors.message ? "border-red" : ""}`}
                             value={formik.values.message} 

@@ -1,19 +1,16 @@
 .MainContent {
   width: 100%;
 }
-
 .MainContent .AboutWrapper {
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
 }
-
 .MainContent .AboutWrapper .CountsWrapper {
   padding-top: calc(33% - 80px);
   position: relative;
 }
-
 .MainContent .AboutWrapper .CountsWrapper .counts-bg {
   position: absolute;
   top: 0;
@@ -23,7 +20,6 @@
   background-color: rgba(0, 0, 0, 0.48);
   padding: 7.5%;
 }
-
 .MainContent .AboutWrapper .CountsWrapper .counts-bg .about-main-title {
   font-size: 3.5vw;
   font-family: Bold;
@@ -44,7 +40,6 @@
     text-align: left !important;
   }
 }
-
 @media (max-width: 600px) {
   .MainContent .AboutWrapper {
     background-size: cover !important;
@@ -59,7 +54,6 @@
     text-align: left !important;
   }
 }
-
 @media (max-width: 430px) {
   .MainContent .AboutWrapper {
     background-size: cover !important;
@@ -71,7 +65,6 @@
     text-align: left !important;
   }
 }
-
 @media (max-width: 1000px) {
   .AboutMainContent {
     padding-top: 0px !important;
@@ -80,91 +73,84 @@
     width: 90%;
   }
 }
-
 @media (max-width: 800px) {
   .AboutMainContent .TextWrapper {
     width: 80%;
   }
 }
-
 @media (max-width: 600px) {
   .AboutMainContent .TextWrapper {
     width: 60%;
   }
 }
-
 @media (max-width: 430px) {
   .AboutMainContent .TextWrapper {
     width: 60%;
   }
 }
-
 @media (max-width: 550px) {
   .features-list .features-item span {
     width: calc(100% - 60px);
     line-height: 22px;
   }
 }
+/*mobile 
+375 - 767.8
 
+tablet
+
+768 - 991.8
+
+desktop 
+992+*/
 .AboutMainContent {
   padding-top: 90px;
   padding-right: 0px;
   padding-left: 0px;
 }
-
 .AboutMainContent .AboutTextContent {
   padding: 0 7.5%;
 }
-
 .AboutMainContent .AboutTextContent .wrapper-title {
   margin-bottom: 30px;
   font-size: 35px;
   font-family: Medium;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
 }
-
 .AboutMainContent .AboutTextContent .description {
   font-size: 14px;
   text-align: justify;
   line-height: 26px;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   margin-bottom: 20px;
 }
-
 .AboutMainContent .AboutTextContent .description p {
   margin: 20px 0 10px 0;
 }
-
 .AboutMainContent .AboutTextContent .description ul {
   margin-left: 25px;
   list-style-type: none;
 }
-
 .AboutMainContent .AboutTextContent .description img {
   width: 30%;
   margin: 0 30px;
   border-radius: 30px;
 }
-
 .AboutMainContent .AboutTextContent .description .RightImgWrapper {
   float: right;
 }
-
 .AboutMainContent .AboutTextContent .description .AboutTitle {
   margin-top: 20px;
 }
-
 .AboutMainContent .AboutTextContent .description .AboutTitle .LeftImgWrapper {
   float: left;
   margin-right: 45px;
 }
-
 .AboutMainContent .features-list {
   padding: 60px 7.5%;
   display: flex;
   flex-wrap: wrap;
 }
-
 .AboutMainContent .features-list .features-item {
   width: 25%;
   display: flex;
@@ -172,24 +158,20 @@
   text-decoration: none;
   color: black;
 }
-
 .AboutMainContent .features-list .features-item svg {
   width: 50px;
   height: 50px;
   margin-right: 20px;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 .AboutMainContent .features-list .features-item span {
   width: calc(100% - 70px);
   line-height: 26px;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
 }
-
 .AboutMainContent .features-item:not(:first-child) svg {
   margin-left: 20px;
 }
-
 .AboutMainContent .features-item:not(:last-child) {
   border-right: 1px solid #d8d8d8;
 }
@@ -200,14 +182,12 @@
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
-
 .main-img-wrapper .main-img-content .img-item {
   width: 20%;
   display: flex;
   align-items: center;
   padding: 0 20px;
 }
-
 .main-img-wrapper .main-img-content .img-item img {
   width: 100%;
 }
@@ -239,7 +219,6 @@
     border-right: 0;
   }
 }
-
 @media (max-width: 850px) {
   .main-img-content {
     justify-content: center;
@@ -250,4 +229,3 @@
     text-align: center;
   }
 }
-/*# sourceMappingURL=about.css.map */

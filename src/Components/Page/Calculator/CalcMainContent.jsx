@@ -87,11 +87,9 @@ export default function CalcMainContent() {
       setMonths(S / 100)
       setPercent(pay - months)
       
-      for (let i = 0; i < data.monthsCount; i++) {
+      for (let i = 0; i < data.monthsCount; i++) {}
       
-      }
-      
-    }else{
+    } else {
       setState({inputClass: "invalid"})
     }    
 	}

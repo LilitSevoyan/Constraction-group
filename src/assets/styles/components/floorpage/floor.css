@@ -3,12 +3,10 @@
   justify-content: space-between;
   padding: 3.75% 3.75% 7.5% 7.5%;
 }
-
 .FloorMainContent .LeftSide, .FloorMainContent .floors-main-wrapper {
   display: flex;
   flex-direction: column;
 }
-
 .FloorMainContent .LeftSide .floors-content, .FloorMainContent .floors-main-wrapper .floors-content {
   position: relative;
   z-index: 2;
@@ -17,7 +15,6 @@
   box-shadow: 0 0 7px 4px #f8f8f8;
   border-radius: 4px;
 }
-
 .FloorMainContent .LeftSide .floors-content .selected-floor, .FloorMainContent .floors-main-wrapper .floors-content .selected-floor {
   font-size: 20px;
   font-family: Bold;
@@ -28,12 +25,10 @@
   align-items: center;
   border-radius: 4px 4px 0 0;
 }
-
 .FloorMainContent .LeftSide .floors-content .floors-list, .FloorMainContent .floors-main-wrapper .floors-content .floors-list {
   padding: 20px 15px 30px;
   text-align: center;
 }
-
 .FloorMainContent .LeftSide .floors-content .floors-list .list-item, .FloorMainContent .floors-main-wrapper .floors-content .floors-list .list-item {
   width: 50px;
   height: 50px;
@@ -46,31 +41,26 @@
   font-size: 18px;
   font-family: Bold;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 .FloorMainContent .LeftSide .active, .FloorMainContent .floors-main-wrapper .active {
   background-color: #5282c1 !important;
 }
-
 .FloorMainContent .LeftSide .parking-wrapper, .FloorMainContent .floors-main-wrapper .parking-wrapper {
   display: flex;
   box-shadow: 0 0 7px 4px #f8f8f8;
   width: 280px;
   margin: 40px 0;
 }
-
 .FloorMainContent .LeftSide .parking-wrapper svg, .FloorMainContent .floors-main-wrapper .parking-wrapper svg {
   width: 60px;
   height: 60px;
 }
-
 .FloorMainContent .LeftSide .parking-wrapper .parking-floors-list, .FloorMainContent .floors-main-wrapper .parking-wrapper .parking-floors-list {
   display: flex;
   justify-content: flex-end;
   width: 200px;
 }
-
 .FloorMainContent .LeftSide .parking-wrapper .parking-floors-list .list-item, .FloorMainContent .floors-main-wrapper .parking-wrapper .parking-floors-list .list-item {
   width: 50px;
   height: 50px;
@@ -83,44 +73,36 @@
   border-radius: 4px;
   align-items: center;
   background-color: #f5f5f5;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 .FloorMainContent .LeftSide .badges-wrapper, .FloorMainContent .floors-main-wrapper .badges-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 50px 0;
 }
-
 .FloorMainContent .LeftSide .badges-wrapper .badge-item, .FloorMainContent .floors-main-wrapper .badges-wrapper .badge-item {
   display: flex;
   margin-right: 10px;
 }
-
 .FloorMainContent .LeftSide .badges-wrapper .badge-item .badge-color, .FloorMainContent .floors-main-wrapper .badges-wrapper .badge-item .badge-color {
   width: 20px;
   height: 20px;
   border-radius: 4px;
   margin-right: 10px;
 }
-
 .FloorMainContent .LeftSide .badges-wrapper .badge-item .bg-green, .FloorMainContent .floors-main-wrapper .badges-wrapper .badge-item .bg-green {
-  background: #12cc01;
+  background: rgb(18, 204, 1);
 }
-
 .FloorMainContent .LeftSide .badges-wrapper .badge-item .bg-yellow, .FloorMainContent .floors-main-wrapper .badges-wrapper .badge-item .bg-yellow {
-  background: #eed602;
+  background: rgb(238, 214, 2);
 }
-
 .FloorMainContent .LeftSide .badges-wrapper .badge-item .bg-red, .FloorMainContent .floors-main-wrapper .badges-wrapper .badge-item .bg-red {
-  background: #f80909;
+  background: rgb(248, 9, 9);
 }
-
 .FloorMainContent .RightSide {
   width: calc(100% - 500px);
   overflow: hidden;
 }
-
 .FloorMainContent .RightSide .ImageWrapper {
   width: 100%;
   position: relative;
@@ -129,7 +111,6 @@
   border-radius: 6px 0 0 6px;
   padding-top: 70%;
 }
-
 .FloorMainContent .RightSide .ImageWrapper img {
   position: absolute;
   height: 100%;
@@ -139,7 +120,6 @@
   right: 0;
   z-index: 100;
 }
-
 .FloorMainContent .RightSide .ImageWrapper svg {
   position: absolute;
   width: 100%;
@@ -156,7 +136,6 @@
   box-shadow: 0 0 3px 2px #f8f8f8;
   border-radius: 4px;
 }
-
 .tooltip-wrapper .tooltip-left-part {
   display: flex;
   flex-direction: column;
@@ -169,12 +148,10 @@
   justify-content: center;
   color: #fff;
 }
-
 .tooltip-wrapper .tooltip-left-part .building-number {
   font-size: 15px;
   font-family: Bold;
 }
-
 .tooltip-wrapper .tooltip-right-part {
   display: flex;
   flex-direction: column;
@@ -184,13 +161,11 @@
   height: 66px;
   justify-content: center;
 }
-
 .tooltip-wrapper .tooltip-right-part .floors-count {
   font-size: 14px;
   color: #868686;
   font-family: Regular;
 }
-
 .tooltip-wrapper .tooltip-right-part .houses-count {
   font-size: 16px;
   color: #202020;
@@ -198,21 +173,21 @@
 }
 
 .color-green {
-  stroke: #7ed321;
-  fill: #7ed321;
-  background: #7ed321;
+  stroke: rgb(126, 211, 33);
+  fill: rgb(126, 211, 33);
+  background: rgb(126, 211, 33);
 }
 
 .color-yellow {
-  stroke: #f5a623;
-  fill: #f5a623;
-  background: #f5a623;
+  stroke: rgb(245, 166, 35);
+  fill: rgb(245, 166, 35);
+  background: rgb(245, 166, 35);
 }
 
 .color-red {
-  stroke: #f10004;
-  fill: #f10004;
-  background: #f10004;
+  stroke: rgb(241, 0, 4);
+  fill: rgb(241, 0, 4);
+  background: rgb(241, 0, 4);
 }
 
 @media (max-width: 1200px) {
@@ -220,10 +195,8 @@
     width: 100% !important;
   }
 }
-
 @media (max-width: 1200px) {
   .FloorMainContent {
     flex-direction: column;
   }
 }
-/*# sourceMappingURL=floor.css.map */
