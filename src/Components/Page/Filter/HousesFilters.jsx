@@ -103,7 +103,7 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
                                     <option value="priceIncrease">Գնի աճման</option>
                                     <option value="priceDecrease">Գնի նվազման</option>
                                     <option value="areaIncrease">Մակերեսի աճման</option>
-                                    <option value="areaeDecrease">Մակերեսի նվազման</option>
+                                    <option value="areaDecrease">Մակերեսի նվազման</option>
                                     <option value="roomsCountIncrease">Սենյակների քանակի աճման</option>
                                     <option value="roomsCountDecrease">Սենյակների քանակի նվազման</option>
                                 </select>

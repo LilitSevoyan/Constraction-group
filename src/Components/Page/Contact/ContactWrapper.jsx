@@ -20,14 +20,14 @@ export default function ContactWrapper() {
             phoneNumber: Yup.number().min(9).required(),
             message:Yup.string().required(),
         }),
-        onSubmit: values => {
+        onSubmit: (values, {resetForm}) => {
             axios.post(`${API_URL}/contact`, {
                 fullName : formik.values.fullName,
                 email:formik.values.email,
                 phoneNumber:formik.values.phoneNumber,
                 message:formik.values.message
             })
-            .then(res => res.data)
+            .then(res => resetForm())
             .catch(errors => console.log(errors))
         },
     })
@@ -38,7 +38,7 @@ export default function ContactWrapper() {
                 <div className="description">Կարող եք կապ հաստատել մեզ հետ նշված եղանակներով</div>
                 <div className="line"></div>
                 <div className="contact-items">
-                    <a href="tel:+37477444444" className="item-card">
+                    <Link to="tel:+37477444444" className="item-card">
                         <div className="icon-wrapper">
                             <Phone/>
                         </div>
@@ -46,8 +46,8 @@ export default function ContactWrapper() {
                             <div className="item-card-content-title">Հեռ․</div>
                             <div className="item-card-content-text">+37477444444</div>
                         </div>
-                    </a>
-                    <a href="mailto:sales@construction-group.am." className="item-card">
+                    </Link>
+                    <Link to="mailto:sales@construction-group.am." className="item-card">
                         <div className="icon-wrapper">
                             <Mail/>
                         </div>
@@ -55,7 +55,7 @@ export default function ContactWrapper() {
                             <div className="item-card-content-title">Էլ․ հասցե</div>
                             <div className="item-card-content-text">sales@construction-group.am</div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="line"></div>
                 <Link to="/address" className="item-card">

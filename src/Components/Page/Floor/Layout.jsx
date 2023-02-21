@@ -58,33 +58,33 @@ export default function Layout({rooms}) {
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[14]} id="15" d="M1350 1306.5L1352.5 1285H1481V1416H1290.5V1403L1304 1393.5L1317 1380.5L1329 1364.5L1339 1347.5L1346.5 1323.5L1350 1306.5Z"  strokeWidth="3"  fillOpacity="0.198426573"/>
                 </g>
             </svg>
-        <div 
-            style={{
-              display: state ? 'block' : 'none',
-              position: 'fixed',
-              top: y,
-              left:x,
-              zIndex: "1000"
-            }}
-        >
-            {state && (
-                <div className={`tooltip-wrapper ${color}`}>
-                   {houseNumber.map((arr,i)=>i+1 === number 
-                        ? <div className="tooltip-left-part" key ={i}>
-                            <span className="building-number">N {arr}</span> 
-                        </div>
-                        : null
-                    )}
-                    {area.map((arr,i)=>i+1 === number 
-                        ? <div className="tooltip-right-part" key ={i}>
-                            <span className="floors-count">մակերես</span>
-                            <span className="houses-count">{arr} մ <sup>2</sup></span>
-                        </div>
-                        : null
-                    )}
-                </div>
-            )}
+            <div 
+                style={{
+                  display: state ? 'block' : 'none',
+                  position: 'fixed',
+                  top: y,
+                  left:x,
+                  zIndex: "1000"
+                }}
+            >
+                {state && (
+                    <div className={`tooltip-wrapper ${color}`}>
+                       {houseNumber.map((arr,i)=>i+1 === number 
+                            ? <div className="tooltip-left-part" key ={i}>
+                                <span className="building-number">N {arr}</span> 
+                            </div>
+                            : null
+                        )}
+                        {area.map((arr,i)=>i+1 === number 
+                            ? <div className="tooltip-right-part" key ={i}>
+                                <span className="floors-count">մակերես</span>
+                                <span className="houses-count">{arr} մ <sup>2</sup></span>
+                            </div>
+                            : null
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
-     </div>
     )
 }

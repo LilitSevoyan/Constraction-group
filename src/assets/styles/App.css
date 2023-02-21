@@ -1905,18 +1905,21 @@ iframe {
   stroke: rgb(126, 211, 33);
   fill: rgb(126, 211, 33);
   background: rgb(126, 211, 33);
+  cursor: pointer;
 }
 
 .color-yellow {
   stroke: rgb(245, 166, 35);
   fill: rgb(245, 166, 35);
   background: rgb(245, 166, 35);
+  cursor: pointer;
 }
 
 .color-red {
   stroke: rgb(241, 0, 4);
   fill: rgb(241, 0, 4);
   background: rgb(241, 0, 4);
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

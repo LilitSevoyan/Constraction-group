@@ -1,9 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import {Logo,Facebook,Instagram,Linkedin} from "../../assets"
+import { Link } from "react-router-dom"
+import { Logo, Facebook, Instagram, Linkedin } from "../../assets"
 
 export default function Footer() {
-  return(
+  return (
     <footer className="footerWrapper">
       <div className="top-side desktop">
         <div className="col">

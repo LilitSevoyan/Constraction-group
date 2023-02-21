@@ -21,7 +21,7 @@ export default function Svg() {
        const houseinf = response.data
        setFree(houseinf)
     })
-  }, [state])
+  }, [API_URL, state])
     
   return(
     <>

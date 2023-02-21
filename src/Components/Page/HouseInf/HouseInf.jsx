@@ -6,11 +6,14 @@ import FileDownload from "js-file-download"
 import axios from "axios"
 
 export default function HouseInf({id}) {
+
+    const API_URL = process.env.REACT_APP_API_URL
     
     const room = (id?.rooms || []).map((rooms) => rooms.room)
     const bathroom = (id?.bathrooms || []).map((bathrooms) => bathrooms.bathroom)
     const balcony = (id?.balconys || []).map((balconys) => balconys.balcony)
-    const [className,setClassName] = useState("")
+    const [className, setClassName] = useState("")
+
     useEffect(() => {
         if (id.badge === "Առկա") {
             setClassName("textColorGreen")
@@ -19,7 +22,7 @@ export default function HouseInf({id}) {
         } else {
             setClassName("textColorYellow")
         }
-    },[id, id.badge])
+    }, [id, id.badge])
 
     const houseInf = [
         {id:1,  title: 'Ընդհանուր մակերես', text:id.area },
@@ -53,11 +56,10 @@ export default function HouseInf({id}) {
         const imgDownLoad = poster.split("/")
         const imgName = imgDownLoad[imgDownLoad.length - 1]
         axios({
-            url:`http://localhost:8080/getPdf/${imgName}`,
+            url:`${API_URL}/getPdf/${imgName}`,
             method:"GET",
             responseType:"blob",
-        }).then((res)=>{
-            console.log(res)
+        }).then((res) => {
             FileDownload(res.data,`${id.houseNumber}.png`)
         }).catch(function (error) {
             console.log(error)

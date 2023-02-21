@@ -16,7 +16,7 @@ export default function Header() {
     setLanguage(item)
     setActive(!active)
   }
-  console.log(language)
+
   return(
     <div className="headerWrapper">
       <div className="desktop-menu">
@@ -45,7 +45,7 @@ export default function Header() {
                       : null
                     )}
                   </div>
-                  <div class={active ? "triangle" : "hide"}></div>
+                  <div className={active ? "triangle" : "hide"}></div>
                   <ul className={active ? "show" : "hide"}>
                     {languages.map((lang) => lang.lang !== language 
                       ? <li key={lang.name}>
@@ -59,12 +59,12 @@ export default function Header() {
                 </div>
               </li>
               <li>
-                <a href="tel:+374 (77) 444444">
+                <Link to="tel:+374 (77) 444444">
                   <div className="menu-item  header-phone">
                     <i className="fas fa-phone-alt"></i>
                     <span>+374 (77) 444444 </span>
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

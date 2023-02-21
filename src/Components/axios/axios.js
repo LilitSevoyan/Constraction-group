@@ -88,7 +88,6 @@ export const getFilter = (badge) => {
 export const getHouseFloor = (floor) => {
     return axios.get(`${API_URL}/floor/house/${floor}`)
         .then((response) => {
-            console.log(response.data)
             return response.data
         })
         .catch(function (error) {

@@ -45,8 +45,8 @@ export default function Layout1({rooms}) {
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[0]} id ="1" d="M342 1428.5H163V1386.5H216V1273H342V1428.5Z"strokeWidth="3"  fillOpacity="0.198426573" />
                     <path onClick={handleUrl} onMouseOver={() => {setState(4)}} className={className[1]} id ="2" d="M568.5 1273H342.5L344 1428.5H631V1396L612 1376.5L592.5 1352L578.5 1326.5H592.5L601 1318.5L606.5 1308L610 1296.5L611.5 1284.5V1273H568.5Z" strokeWidth="3" fillOpacity="0.198426573"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(3)}} className={className[2]} id ="3" d="M376.5 1277V1152.5H449.5V1123.5H538.5H636.5V1157.5L624 1167L614 1176L599.5 1193L583.5 1222.5H597L605 1229L611.5 1241L614 1251L615.5 1264.5V1277H376.5Z"  strokeWidth="3" fillOpacity="0.198426573"/>
-                    <path onClick={handleUrl} onMouseOver={() => {setState(2)}} className={className[3]} id ="4" d="M133.5 1153V1025H305.5V1110H338V1153H305.5V1228.5H248.5V1153H133.5Z"  strokeWidth="3" fillOpacity="0.198426573" />
-                    <path onClick={handleUrl} onMouseOver={() => {setState(3)}} className={className[4]} id ="5" d="M375.5 1233H309V1157H341.5V1114H309V1029.5H137.5V964H451V984.5H465.5L473.5 992.5L478.5 1007V1028L477 1038.5L473.5 1047L467.5 1053.5H449V1152.5H375.5V1233Z"  strokeWidth="3"  fillOpacity="0.198426573"/>
+                    <path onClick={handleUrl} onMouseOver={() => {setState(3)}} className={className[3]} id ="4" d="M375.5 1233H309V1157H341.5V1114H309V1029.5H137.5V964H451V984.5H465.5L473.5 992.5L478.5 1007V1028L477 1038.5L473.5 1047L467.5 1053.5H449V1152.5H375.5V1233Z"  strokeWidth="3"  fillOpacity="0.198426573"/>
+                    <path onClick={handleUrl} onMouseOver={() => {setState(2)}} className={className[4]} id ="5" d="M133.5 1153V1025H305.5V1110H338V1153H305.5V1228.5H248.5V1153H133.5Z"  strokeWidth="3" fillOpacity="0.198426573" />
                     <path onClick={handleUrl} onMouseOver={() => {setState(2)}} className={className[5]} id ="6" d="M342 878.5V829H164.5V815.5V812.5H155.5L151 815.5L147.5 819.5L145 823.5L142.5 829L140.5 833L138 840.5L137 845.5L136 852.5V866V878.5V886.5L137 895L140 902L142.5 908L146.5 914.5L151 919.5L155 923H164.5V950.5H475.5V878.5H342Z"  strokeWidth="3"  fillOpacity="0.198426573" />
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[6]} id ="7" d="M168.5 832.5V712H303.5V832.5H168.5Z" stroke="rgb(245, 166, 35)" strokeWidth="3" fill="rgb(245, 166, 35)" fillOpacity="0.198426573"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(3)}} className={className[7]} id ="8" d="M168 711H304M168 711H347.5V754.5H438V778H478V618H341.5V578.5H168V618H162L155 622L150 629L145.5 637L141 649L139 660V672V687.5L141 699L144 711L148.5 717L153 722.5L160 728.5H168V711Z" strokeWidth="3" fillOpacity="0.198426573"/>
@@ -66,7 +66,7 @@ export default function Layout1({rooms}) {
                     <path onClick={handleUrl} onMouseOver={() => {setState(2)}} className={className[21]} id="22" d="M1158 1120.5H1343V1150H1418V1273.5H1177V1258L1179.5 1244L1182 1235L1189 1224L1197 1218H1209L1187 1181.5L1158 1153V1120.5Z"  strokeWidth="3" fillOpacity="0.198426573"/>
                     <path onClick={handleUrl} onMouseOver={() => {setState(3)}} className={className[22]} id="23" d="M1177 1287.5V1273.5H1448.5V1427.5H1158L1157.5 1393L1161 1391.5L1180.5 1373.5L1193.5 1356L1207.5 1329L1199 1326.5L1190.5 1320.5L1185.5 1312.5L1180.5 1300L1177 1287.5Z"  strokeWidth="3"  fillOpacity="0.198426573" />
                     <path onClick={handleUrl} onMouseOver={() => {setState(1)}} className={className[23]} id="24"d="M1571.5 1273.5H1447.5V1427.5H1625.5V1388.5H1571.5V1273.5Z"  strokeWidth="3" fillOpacity="0.198426573" /> 
-                 </g>
+                </g>
             </svg>
             <div 
                 style={{
