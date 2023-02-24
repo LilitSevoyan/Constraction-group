@@ -21,8 +21,8 @@ export const getRoomsAction = createAsyncThunk(
 
 export const getAllRoomsAction = createAsyncThunk(
     'main/getAllRooms',
-    async()=>{
-        const allRooms = await  getAllRooms()
+    async (currentPage, setCurrentPage, setFetching,  setRooms, rooms, setTotalCount) => {
+        const allRooms = await  getAllRooms(currentPage, setCurrentPage, setFetching,  setRooms, rooms, setTotalCount)
         return allRooms
     }
 )

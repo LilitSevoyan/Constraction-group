@@ -3,12 +3,13 @@ import { Link } from "react-router-dom"
 import { Upload } from "../../../assets/index"
 import FileDownload from "js-file-download"
 import axios from "axios"
+import Loading from "./Loading"
 
-export default function HousesWrapper({card,toggle,setToggle,setNumber}) {
+export default function HousesWrapper({card, toggle, setToggle, setNumber, loading}) {
 
     const API_URL = process.env.REACT_APP_API_URL
   
-    const saveFile = (e,poster,houseNumber) => {
+    const saveFile = (e, poster, houseNumber) => {
         e.preventDefault()
         const  img = card?.map((arr) => arr.poster)
         const saveImg = img.find((arr) => arr === poster)
@@ -16,7 +17,7 @@ export default function HousesWrapper({card,toggle,setToggle,setNumber}) {
         const imgName = imgDownLoad[imgDownLoad.length - 1]
     
         axios({
-            url:`${API_URL}/getPdf/${imgName}`,
+            url:`${API_URL}/building/getPdf/${imgName}`,
             method:"GET",
             responseType:"blob",
         }).then((res)=>{
@@ -68,6 +69,16 @@ export default function HousesWrapper({card,toggle,setToggle,setNumber}) {
                         </div> 
                     </Link>
                 )}
+                {!card && loading
+                    ?<Loading/>
+                    : null
+                }
+                {card && loading 
+                    ? <div className="loader-container">
+                        <div className="spinner"></div>
+                    </div>
+                    : null
+                }
             </div>
         </div>
     )

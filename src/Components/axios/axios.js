@@ -3,7 +3,7 @@ import axios from "axios"
 const API_URL = process.env.REACT_APP_API_URL
 
 export const getRoomsByCount = (count) => {
-    return axios.get(`${API_URL}/rooms/${+count}`)
+    return axios.get(`${API_URL}/building/rooms/${+count}`)
     .then((response) => {
         return response.data
     })
@@ -12,16 +12,18 @@ export const getRoomsByCount = (count) => {
     }) 
 }
 
-export const getAllRooms = () => {
-    return axios.get(`${API_URL}`)
+export const getAllRooms = (currentPage) => {
+    console.log(currentPage, "currentPage")
+    return axios.get(`${API_URL}/building?limit=${24}&page=${currentPage}`)
     .then((response) => {
         return response.data
     })
+    //.finally(() => setFetching(false))
 }
 
 export const getMinMaxPrice = (minPrice,maxPrice) => {
     if (maxPrice && !minPrice) {
-        return axios.get(`${API_URL}/price/sort/max/${+maxPrice}`)
+        return axios.get(`${API_URL}/building/price/sort/max/${+maxPrice}`)
         .then((response) => {
             return response.data
         })
@@ -29,7 +31,7 @@ export const getMinMaxPrice = (minPrice,maxPrice) => {
             console.log(error)
         }) 
     } else if (!maxPrice && minPrice) {
-        return axios.get(`${API_URL}/sort/price/${+minPrice}`)
+        return axios.get(`${API_URL}/building/sort/price/${+minPrice}`)
         .then((response) => {
             return response.data
         })
@@ -37,7 +39,7 @@ export const getMinMaxPrice = (minPrice,maxPrice) => {
             console.log(error)
         }) 
     } else {
-        return axios.get(`${API_URL}/sort/price/${+minPrice}/${+maxPrice}`)
+        return axios.get(`${API_URL}/building/sort/price/${+minPrice}/${+maxPrice}`)
         .then((response) => {
             return response.data
         })
@@ -49,7 +51,7 @@ export const getMinMaxPrice = (minPrice,maxPrice) => {
 
 export const getMinMaxArea = (minArea,maxArea) => {
     if (maxArea && !minArea) {
-        return axios.get(`${API_URL}/area/sort/max/${+maxArea}`)
+        return axios.get(`${API_URL}/building/area/sort/max/${+maxArea}`)
         .then((response) => {
             return response.data
         })
@@ -57,7 +59,7 @@ export const getMinMaxArea = (minArea,maxArea) => {
             console.log(error)
         }) 
     } else if (!maxArea && minArea) {
-        return axios.get(`${API_URL}/sort/area/${+minArea}`)
+        return axios.get(`${API_URL}/building/sort/area/${+minArea}`)
         .then((response) => {
             return response.data
         })
@@ -65,7 +67,7 @@ export const getMinMaxArea = (minArea,maxArea) => {
             console.log(error)
         }) 
     } else {
-        return axios.get(`${API_URL}/sort/area/${+minArea}/${+maxArea}`)
+        return axios.get(`${API_URL}/building/sort/area/${+minArea}/${+maxArea}`)
         .then((response) => {
             return response.data
         })
@@ -106,7 +108,7 @@ export const getMaxMinSelect = (badge) => {
 }
 
 export const getFindById = (id) => {
-    return axios.get(`${API_URL}/id/${id}`)
+    return axios.get(`${API_URL}/building/id/${id}`)
         .then((response) => {
             return response.data
         })
@@ -116,7 +118,7 @@ export const getFindById = (id) => {
 }
 
 export const postSubscribe = (email) => {
-    return axios.post(`${API_URL}/subscribe`,{
+    return axios.post(`${API_URL}/subscribe`, {
         email
     })
         .then((response) => {

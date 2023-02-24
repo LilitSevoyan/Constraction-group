@@ -56,7 +56,7 @@ export default function HouseInf({id}) {
         const imgDownLoad = poster.split("/")
         const imgName = imgDownLoad[imgDownLoad.length - 1]
         axios({
-            url:`${API_URL}/getPdf/${imgName}`,
+            url:`${API_URL}/building/getPdf/${imgName}`,
             method:"GET",
             responseType:"blob",
         }).then((res) => {

@@ -12,7 +12,7 @@ export const languages = [
       flag: <FlagRu />,
     },
     {
-      lang: 'us',
+      lang: 'en',
       name: 'Eng',
       flag: <FlagUs />,
     }

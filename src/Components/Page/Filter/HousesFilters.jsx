@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { ArrowIcon } from "../../../assets/index"
 import {
         getRoomsAction,
@@ -15,9 +15,8 @@ import Floor from "./Floor"
 
 export default function HousesFilters({isToggle, setisToggle,setNumber}) {
     const dispatch = useDispatch()
-    const { rooms } = useSelector(state => state.main)
     const [isToggleOn, setisToggleOn] = useState(true)
-    const [data,setData] = useState({
+    const [data, setData] = useState({
         minArea:"",
         maxArea:"",
         minPrice:"",
@@ -25,19 +24,22 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
         category:"Առկա",
         select:""
     })
+    const [rooms, setRooms] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [fetching, setFetching] = useState(true)
+    const [totalCount, setTotalCount] = useState(0)
    
     const DropdownClick = (e) => {
         e.preventDefault()
         setisToggleOn(!isToggleOn)
     }
 
-    useEffect(() => {
-        dispatch(getAllRoomsAction())
-     }, [dispatch]) 
-
-    const clickRoomsCount = async (e) => {
+    const clickRoomsCount = (e) => {
         const count  =+ e.target.firstChild.nodeValue
-        dispatch(getRoomsAction(count))
+        dispatch(getRoomsAction(count)).then(res => {
+            setRooms(res.payload)
+            setTotalCount(res.payload.length)
+        })
     }
     
     const handleChange = async (e) => {
@@ -45,15 +47,20 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
         if (e.target.type === "text") {
             if (e.target.value.match(numbers)) {
                 setData({ ...data,[e.target.name]: e.target.value })
-                console.log({'e.target.name': e.target.name, 'e.target.value': e.target.value})
                 const minPrice = e.target.name === 'minPrice' ? e.target.value : data.minPrice
                 const maxPrice = e.target.name === 'maxPrice' ? e.target.value : data.maxPrice
                 const minArea = e.target.name === 'minArea' ? e.target.value : data.minArea
                 const maxArea = e.target.name === 'maxArea' ? e.target.value : data.maxArea
                 if (e.target.name === "minPrice" || e.target.name === "maxPrice" ) {
-                    dispatch(getMinMaxPriceAction({minPrice, maxPrice}))
+                    dispatch(getMinMaxPriceAction({minPrice, maxPrice})).then(res => {
+                        setRooms(res.payload)
+                        setTotalCount(res.payload.length)
+                    })
                 } else {
-                    dispatch(getMinMaxAreaAction({minArea, maxArea}))
+                    dispatch(getMinMaxAreaAction({minArea, maxArea})).then(res => {
+                        setRooms(res.payload)
+                        setTotalCount(res.payload.length)
+                    })
                 }
             }
         } else {
@@ -65,13 +72,47 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
         setData({ ...data,[e.target.name]: e.target.value })
         if (e.target.name === "category") {
             const badge = e.target.value
-            dispatch(getFilterAction(badge))
+            dispatch(getFilterAction(badge)).then(res => {
+                setRooms(res.payload)
+                setTotalCount(res.payload.length)
+            })
         } else {
             const badge = e.target.value
-            dispatch(getMaxMinSelectAction(badge))
+            dispatch(getMaxMinSelectAction(badge)).then(res => {
+                setRooms(res.payload)
+                setTotalCount(res.payload.length)
+            })
         }  
     }
 
+    const scrollHandler = (e) => {
+        if ((e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100)
+        && rooms.length < totalCount) {
+            setFetching(true)
+        }
+    }
+
+    useEffect(() => {
+        if (fetching) {
+            dispatch(getAllRoomsAction(currentPage))
+                .then(res => {
+                    setCurrentPage(prevState => prevState + 1)
+                    setRooms([...rooms, ...res.payload.allHouses])
+                    setTotalCount(res.payload.count)
+                })
+                .finally(() => {
+                    setFetching(false)
+                })
+        }
+    }, [fetching]) 
+
+    useEffect(() => {
+        document.addEventListener("scroll", scrollHandler)
+        return function () {
+            document.removeEventListener("scroll", scrollHandler)
+        }
+    }, [rooms, totalCount])
+    
     return (
         <div className="MainContent">
             <div className="HousesFilters">
@@ -157,7 +198,7 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
                     </div>
                     <div className="clear-filters-wrapper"></div>
                 </div>
-                <HousesWrapper card={rooms} toggle={isToggle} setToggle={setisToggle} setNumber={setNumber}/>
+                <HousesWrapper card={rooms} toggle={isToggle} setToggle={setisToggle} setNumber={setNumber} loading={fetching}/>
             </div>
         </div>
     )

@@ -7,6 +7,8 @@ import axios from "axios"
 
 export default function ContactWrapper() {
     const API_URL = process.env.REACT_APP_API_URL
+    const language = localStorage.getItem("language")
+    
     const formik = useFormik({
         initialValues: {
             fullName: '',
@@ -22,10 +24,15 @@ export default function ContactWrapper() {
         }),
         onSubmit: (values, {resetForm}) => {
             axios.post(`${API_URL}/contact`, {
-                fullName : formik.values.fullName,
-                email:formik.values.email,
-                phoneNumber:formik.values.phoneNumber,
-                message:formik.values.message
+                fullName: formik.values.fullName,
+                email: formik.values.email,
+                phoneNumber: formik.values.phoneNumber,
+                message: formik.values.message
+            }, 
+            {
+                headers: {
+                    "Accept-Language": language
+                }
             })
             .then(res => resetForm())
             .catch(errors => console.log(errors))
