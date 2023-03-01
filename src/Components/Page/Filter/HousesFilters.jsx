@@ -2,27 +2,22 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { ArrowIcon } from "../../../assets/index"
-import {
-        getRoomsAction,
-        getAllRoomsAction,
-        getMinMaxPriceAction,
-        getFilterAction,
-        getMaxMinSelectAction,
-        getMinMaxAreaAction
-        } from '../../../redux/actions/mainAction'
+import { getAllRoomsAction } from '../../../redux/actions/mainAction'
 import HousesWrapper from "./HousesWrapper"
 import Floor from "./Floor"
 
-export default function HousesFilters({isToggle, setisToggle,setNumber}) {
+export default function HousesFilters({isToggle, setisToggle, setNumber}) {
     const dispatch = useDispatch()
     const [isToggleOn, setisToggleOn] = useState(true)
     const [data, setData] = useState({
-        minArea:"",
-        maxArea:"",
-        minPrice:"",
-        maxPrice:"",
-        category:"Առկա",
-        select:""
+        status: "Առկա",
+        sort: "",
+        floor: "",
+        room: "",
+        price_min: "", 
+        price_max: "", 
+        area_min: "",
+        area_max: ""
     })
     const [rooms, setRooms] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -35,54 +30,32 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
     }
 
     const clickRoomsCount = (e) => {
-        const count  =+ e.target.firstChild.nodeValue
-        dispatch(getRoomsAction(count)).then(res => {
-            setRooms(res.payload)
-            setTotalCount(res.payload.length)
-        })
+        const count =+ e.target.firstChild.nodeValue
+        setData({...data, room: count})
     }
     
     const handleChange = async (e) => {
         let numbers = /^[0-9]+$|^$/
-        if (e.target.type === "text") {
-            if (e.target.value.match(numbers)) {
-                setData({ ...data,[e.target.name]: e.target.value })
-                const minPrice = e.target.name === 'minPrice' ? e.target.value : data.minPrice
-                const maxPrice = e.target.name === 'maxPrice' ? e.target.value : data.maxPrice
-                const minArea = e.target.name === 'minArea' ? e.target.value : data.minArea
-                const maxArea = e.target.name === 'maxArea' ? e.target.value : data.maxArea
-                if (e.target.name === "minPrice" || e.target.name === "maxPrice" ) {
-                    dispatch(getMinMaxPriceAction({minPrice, maxPrice})).then(res => {
-                        setRooms(res.payload)
-                        setTotalCount(res.payload.length)
-                    })
-                } else {
-                    dispatch(getMinMaxAreaAction({minArea, maxArea})).then(res => {
-                        setRooms(res.payload)
-                        setTotalCount(res.payload.length)
-                    })
-                }
-            }
-        } else {
-            setData({ ...data,[e.target.name]: e.target.value }) 
-        } 
+        if (e.target.value.match(numbers)) {
+            setData({ ...data, [e.target.name]: e.target.value })
+        }
     }
 
-    const change = async(e) => {
-        setData({ ...data,[e.target.name]: e.target.value })
-        if (e.target.name === "category") {
-            const badge = e.target.value
-            dispatch(getFilterAction(badge)).then(res => {
-                setRooms(res.payload)
-                setTotalCount(res.payload.length)
-            })
-        } else {
-            const badge = e.target.value
-            dispatch(getMaxMinSelectAction(badge)).then(res => {
-                setRooms(res.payload)
-                setTotalCount(res.payload.length)
-            })
-        }  
+    const change = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value })
+    }
+
+    const handleDelete = () => {
+        setData({
+            status: "Առկա",
+            sort: "",
+            floor: "",
+            room: "",
+            price_min: "", 
+            price_max: "", 
+            area_min: "",
+            area_max: ""
+        })
     }
 
     const scrollHandler = (e) => {
@@ -92,17 +65,21 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
         }
     }
 
+    const filterHandler = (currentPage, {status, sort, floor, room, price_min, price_max, area_min, area_max}) => {
+        dispatch(getAllRoomsAction({currentPage, status, sort, floor, room, price_min, price_max, area_min, area_max}))
+            .then(res => {
+                setCurrentPage(prevState => prevState + 1)
+                setRooms([...rooms, ...res.payload.filter])
+                setTotalCount(res.payload.count)
+            })
+            .finally(() => {
+                setFetching(false)
+            })
+    }
+
     useEffect(() => {
         if (fetching) {
-            dispatch(getAllRoomsAction(currentPage))
-                .then(res => {
-                    setCurrentPage(prevState => prevState + 1)
-                    setRooms([...rooms, ...res.payload.allHouses])
-                    setTotalCount(res.payload.count)
-                })
-                .finally(() => {
-                    setFetching(false)
-                })
+            filterHandler(currentPage, data)
         }
     }, [fetching]) 
 
@@ -112,9 +89,15 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
             document.removeEventListener("scroll", scrollHandler)
         }
     }, [rooms, totalCount])
+
+    useEffect(() => {
+        setRooms([])
+        setCurrentPage(1)
+        setFetching(true)
+    }, [data])
     
     return (
-        <div className="MainContent">
+        <div className="FilterContent">
             <div className="HousesFilters">
                 <div className="HeaderWrapper">
                     <span className="header-title"></span>
@@ -132,15 +115,15 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
                     <div className="filter-top">
                         <div className=""></div>
                         <div className="filters-sort-part">
-                            <div className=" status-sort">
-                                <select name="category" value={data.category} onChange={change}>
+                            <div className="status-sort">
+                                <select name="status" value={data.status} onChange={change}>
                                     <option value="Առկա">Առկա է (125)</option>
                                     <option value="Ամրագրված">Ամրագրված(83)</option>
                                     <option value="Վաճառված">Վաճառված է</option>
                                 </select>
                             </div>
                             <div className="sort">
-                                <select name="select" value={data.select} onChange={change}  >
+                                <select name="sort" value={data.sort} onChange={change}>
                                     <option value="priceIncrease">Գնի աճման</option>
                                     <option value="priceDecrease">Գնի նվազման</option>
                                     <option value="areaIncrease">Մակերեսի աճման</option>
@@ -157,46 +140,46 @@ export default function HousesFilters({isToggle, setisToggle,setNumber}) {
                             <span>(14)</span>
                             <ArrowIcon/>
                         </div>
-                        {!isToggleOn ? <Floor houseCard={rooms} toggle={isToggleOn} setToggle={setisToggleOn} /> : null} 
+                        {!isToggleOn ? <Floor data={data} setData={setData} toggle={isToggleOn} setToggle={setisToggleOn} /> : null} 
                         <div className="roomsCount">
                             <div className="field-title">
                                 Սենյակներ
                             </div>
                             <div className="rooms-count" onClick={clickRoomsCount}>
-                                <div className="rooms-count-item">1</div>
-                                <div className="rooms-count-item">2</div>
-                                <div className="rooms-count-item">3</div>
-                                <div className="rooms-count-item">4</div>
+                                <div className={data.room === 1 ? "rooms-count-item filter-active" : "rooms-count-item"}>1</div>
+                                <div className={data.room === 2 ? "rooms-count-item filter-active" : "rooms-count-item"}>2</div>
+                                <div className={data.room === 3 ? "rooms-count-item filter-active" : "rooms-count-item"}>3</div>
+                                <div className={data.room === 4 ? "rooms-count-item filter-active" : "rooms-count-item"}>4</div>
                             </div>
                         </div>
                         <div className="inputs">
                             <div className="fields-wrapper area-fields-wrapper">
-                                <div className="field-title">
-                                    Մակերես
-                                </div>
+                                <div className="field-title">Մակերես</div>
                                 <div className="custom-input-group">
-                                    <input type="text" name="minArea" autoComplete="off" placeholder="սկսած" value={data.minArea} onChange={handleChange} />
+                                    <input type="text" name="area_min" autoComplete="off" placeholder="սկսած" value={data.area_min} onChange={handleChange} />
                                 </div>
                                 <div className="field-title"> - </div>
                                 <div className="custom-input-group">
-                                    <input type="text"name="maxArea" placeholder="մինչև" autoComplete="off" value={data.maxArea}  onChange={handleChange}/>
+                                    <input type="text" name="area_max" placeholder="մինչև" autoComplete="off" value={data.area_max}  onChange={handleChange}/>
                                 </div>
                                 <div className="field-title">մ <sup>2</sup></div>
                             </div>
                             <div className="fields-wrapper price-fields-wrapper">
                                 <div className="field-title">Գին</div>
                                 <div className="custom-input-group">
-                                    <input type="text" name="minPrice" placeholder="սկսած" autoComplete="off" value={data.minPrice} onChange={handleChange}/>
+                                    <input type="text" name="price_min" placeholder="սկսած" autoComplete="off" value={data.price_min} onChange={handleChange}/>
                                 </div>
                                 <div className="field-title"> - </div>
                                 <div className="custom-input-group">
-                                    <input type="text" name="maxPrice" placeholder="մինչև" autoComplete="off" value ={data.maxPrice} onChange={handleChange}/>
+                                    <input type="text" name="price_max" placeholder="մինչև" autoComplete="off" value ={data.price_max} onChange={handleChange}/>
                                 </div>
                                 <div className="field-title">֏</div>
                             </div>
                         </div>
                     </div>
-                    <div className="clear-filters-wrapper"></div>
+                    <div className="clear-filters-wrapper" onClick={handleDelete}>
+                        <span>ջնջել</span>
+                    </div>
                 </div>
                 <HousesWrapper card={rooms} toggle={isToggle} setToggle={setisToggle} setNumber={setNumber} loading={fetching}/>
             </div>

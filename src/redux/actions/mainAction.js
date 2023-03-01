@@ -14,15 +14,15 @@ import {
 export const getRoomsAction = createAsyncThunk(
     'main/getRoomsByCount',
     async (count) => {
-        const rooms = await getRoomsByCount(count);
+        const rooms = await getRoomsByCount(count)
         return rooms
     }
 )
 
 export const getAllRoomsAction = createAsyncThunk(
     'main/getAllRooms',
-    async (currentPage, setCurrentPage, setFetching,  setRooms, rooms, setTotalCount) => {
-        const allRooms = await  getAllRooms(currentPage, setCurrentPage, setFetching,  setRooms, rooms, setTotalCount)
+    async ({currentPage, status, sort, floor, room, price_min, price_max, area_min, area_max}) => {
+        const allRooms = await  getAllRooms(currentPage, status, sort, floor, room, price_min, price_max, area_min, area_max )
         return allRooms
     }
 )

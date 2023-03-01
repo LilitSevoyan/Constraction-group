@@ -1,6 +1,6 @@
-.MainContent{
+.FilterContent{
     width: 100%;
-    min-height: calc(100vh - 354px);
+    min-height: calc(100vh - 302px);
     .HousesFilters {
         display: flex;
         flex-direction: column;
@@ -207,6 +207,9 @@
                 color: #f83636;
                 font-family: Medium;
                 position: relative;
+                span {
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -470,6 +473,10 @@
         } 
     }
 } 
+
+.filter-active {
+    background-color: #5282c1!important;
+}
 
 
 @media (max-width: 1500px){

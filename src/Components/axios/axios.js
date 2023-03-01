@@ -12,16 +12,14 @@ export const getRoomsByCount = (count) => {
     }) 
 }
 
-export const getAllRooms = (currentPage) => {
-    console.log(currentPage, "currentPage")
-    return axios.get(`${API_URL}/building?limit=${24}&page=${currentPage}`)
+export const getAllRooms = (currentPage, status, sort, floor, room, price_min, price_max, area_min, area_max) => {
+    return axios.get(`${API_URL}/building/filters?limit=${24}${currentPage && '&page=' + currentPage}${status && '&badge=' + status}${sort && '&sort=' + sort}${floor && '&floor=' + floor}${room && '&room=' + room}${price_min && '&price_min=' + price_min}${price_max && '&price_max=' + price_max}${area_min && '&area_min=' + area_min}${area_max && '&area_max=' + area_max}`)
     .then((response) => {
         return response.data
     })
-    //.finally(() => setFetching(false))
 }
 
-export const getMinMaxPrice = (minPrice,maxPrice) => {
+export const getMinMaxPrice = (minPrice, maxPrice) => {
     if (maxPrice && !minPrice) {
         return axios.get(`${API_URL}/building/price/sort/max/${+maxPrice}`)
         .then((response) => {

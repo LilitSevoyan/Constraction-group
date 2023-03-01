@@ -1932,58 +1932,58 @@ iframe {
     flex-direction: column;
   }
 }
-.MainContent {
+.FilterContent {
   width: 100%;
-  min-height: calc(100vh - 354px);
+  min-height: calc(100vh - 302px);
 }
-.MainContent .HousesFilters {
+.FilterContent .HousesFilters {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.MainContent .HousesFilters .HeaderWrapper {
+.FilterContent .HousesFilters .HeaderWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 20px 0;
   padding: 0 7.5%;
 }
-.MainContent .HousesFilters .HeaderWrapper .header-title {
+.FilterContent .HousesFilters .HeaderWrapper .header-title {
   font-size: 20px;
   font-family: Bold;
   display: inline-block;
   margin-bottom: 5px;
 }
-.MainContent .HousesFilters .HeaderWrapper .ant-breadcrumb {
+.FilterContent .HousesFilters .HeaderWrapper .ant-breadcrumb {
   line-height: 1.5715;
 }
-.MainContent .HousesFilters .HeaderWrapper .ant-breadcrumb .ant-breadcrumb-link a {
+.FilterContent .HousesFilters .HeaderWrapper .ant-breadcrumb .ant-breadcrumb-link a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.45);
   transition: color 0.3s;
 }
-.MainContent .HousesFilters .HeaderWrapper .ant-breadcrumb .ant-breadcrumb-link:last-child a {
+.FilterContent .HousesFilters .HeaderWrapper .ant-breadcrumb .ant-breadcrumb-link:last-child a {
   color: black !important;
 }
-.MainContent .HousesFilters .HeaderWrapper .ant-breadcrumb .ant-breadcrumb-separator {
+.FilterContent .HousesFilters .HeaderWrapper .ant-breadcrumb .ant-breadcrumb-separator {
   margin: 0 8px;
   color: rgba(0, 0, 0, 0.45);
 }
-.MainContent .HousesFilters .filters {
+.FilterContent .HousesFilters .filters {
   padding: 40px 7.5% 0;
   background-color: #f5f6f8;
 }
-.MainContent .HousesFilters .filters .filter-top {
+.FilterContent .HousesFilters .filters .filter-top {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.MainContent .HousesFilters .filters .filter-top .filters-sort-part {
+.FilterContent .HousesFilters .filters .filter-top .filters-sort-part {
   display: flex;
   justify-content: flex-end;
   margin: 12px 0 0;
 }
-.MainContent .HousesFilters .filters .filter-top .filters-sort-part select {
+.FilterContent .HousesFilters .filters .filter-top .filters-sort-part select {
   font-weight: 400;
   padding: 12px;
   color: rgba(0, 0, 0, 0.85);
@@ -1994,7 +1994,7 @@ iframe {
   border-radius: 6px;
   margin-left: 10px;
 }
-.MainContent .HousesFilters .filters .filter-down {
+.FilterContent .HousesFilters .filters .filter-down {
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -2004,10 +2004,10 @@ iframe {
   margin-top: 10px;
   position: relative;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open::before {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open::before {
   position: absolute;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open {
   position: absolute;
   top: 50px;
   left: 30px;
@@ -2015,7 +2015,7 @@ iframe {
   bottom: 0;
   z-index: 100;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open .filter-floors-list {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open .filter-floors-list {
   padding: 20px 15px;
   width: 278px;
   box-shadow: 0 0 7px 4px #f8f8f8;
@@ -2023,7 +2023,7 @@ iframe {
   background-color: #fff;
   text-align: center;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open .filter-floors-list .list-item {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open .filter-floors-list .list-item {
   width: 50px;
   height: 50px;
   display: inline-flex;
@@ -2037,15 +2037,15 @@ iframe {
   cursor: pointer;
   transition: 0.2s;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open .filter-floors-list .list-item:hover {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open .filter-floors-list .list-item:hover {
   background-color: #5282c1;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open .btnsWrapper {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open .btnsWrapper {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open .btnsWrapper .PrimaryButton {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open .btnsWrapper .PrimaryButton {
   padding: 0 25px;
   width: calc(50% - 6px);
   display: flex;
@@ -2061,43 +2061,43 @@ iframe {
   white-space: nowrap;
   background-color: #5282c1;
 }
-.MainContent .HousesFilters .filters .filter-down .ant-dropdown-open .btnsWrapper .dark {
+.FilterContent .HousesFilters .filters .filter-down .ant-dropdown-open .btnsWrapper .dark {
   color: #202020;
   background: #efeff0 !important;
 }
-.MainContent .HousesFilters .filters .filter-down .field-title {
+.FilterContent .HousesFilters .filters .filter-down .field-title {
   display: flex;
   align-items: center;
   margin: 0 5px;
   color: #202020;
 }
-.MainContent .HousesFilters .filters .filter-down .field-title svg {
+.FilterContent .HousesFilters .filters .filter-down .field-title svg {
   margin-left: 6px;
 }
-.MainContent .HousesFilters .filters .filter-down .floor {
+.FilterContent .HousesFilters .filters .filter-down .floor {
   border-right: 1px solid #e9e9e9;
   transition: 0.2s;
   cursor: pointer;
 }
-.MainContent .HousesFilters .filters .filter-down .roomsCount {
+.FilterContent .HousesFilters .filters .filter-down .roomsCount {
   display: flex;
   cursor: pointer;
   align-items: center;
   margin-right: 12px;
 }
-.MainContent .HousesFilters .filters .filter-down .roomsCount .field-title {
+.FilterContent .HousesFilters .filters .filter-down .roomsCount .field-title {
   display: flex;
   align-items: center;
   font-family: Medium;
   margin: 0 12px;
   color: #202020;
 }
-.MainContent .HousesFilters .filters .filter-down .roomsCount .rooms-count {
+.FilterContent .HousesFilters .filters .filter-down .roomsCount .rooms-count {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.MainContent .HousesFilters .filters .filter-down .roomsCount .rooms-count .rooms-count-item {
+.FilterContent .HousesFilters .filters .filter-down .roomsCount .rooms-count .rooms-count-item {
   border-left: 1px solid #e9e9e9;
   display: flex;
   align-items: center;
@@ -2106,13 +2106,13 @@ iframe {
   height: 32px;
   box-sizing: content-box;
 }
-.MainContent .HousesFilters .filters .filter-down .inputs {
+.FilterContent .HousesFilters .filters .filter-down .inputs {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-grow: 1;
 }
-.MainContent .HousesFilters .filters .filter-down .inputs .fields-wrapper {
+.FilterContent .HousesFilters .filters .filter-down .inputs .fields-wrapper {
   border-left: 1px solid #e9e9e9;
   padding: 12px 0;
   display: flex;
@@ -2120,13 +2120,16 @@ iframe {
   align-items: center;
   flex-grow: 1;
 }
-.MainContent .HousesFilters .filters .clear-filters-wrapper {
+.FilterContent .HousesFilters .filters .clear-filters-wrapper {
   display: flex;
   justify-content: flex-end;
   padding: 24px 0;
   color: #f83636;
   font-family: Medium;
   position: relative;
+}
+.FilterContent .HousesFilters .filters .clear-filters-wrapper span {
+  cursor: pointer;
 }
 
 .houses-wrapper {
@@ -2375,6 +2378,10 @@ iframe {
 .ant-model-container .ant-model .ant-modal-content .model .ant-modal-footer .ant-btn-primary {
   background-color: #5282c1;
   margin-left: 8px;
+}
+
+.filter-active {
+  background-color: #5282c1 !important;
 }
 
 @media (max-width: 1500px) {
